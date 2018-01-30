@@ -7,7 +7,7 @@ You'll need a text editor to follow the other labs. We strongly recommend Visual
 1. Go to https://code.visualstudio.com/
 1. Download and install the appropriate version for your machine (Windows, Mac or Linux)
 
-# Part 2 - Install GitHub Desktop
+## Part 2 - Install GitHub Desktop
 You'll need a GitHub client to clone the repository containing the labs. We strongly recommend GitHub Desktop but if you already have another GitHub compatible client installed, feel free to skip this step.
 
 1. Go to https://desktop.github.com/
