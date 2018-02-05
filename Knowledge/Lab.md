@@ -1,7 +1,7 @@
 # Knowledge Services Lab
 In this lab you'll learn about the Q&A Maker service and the Cortana Intelligence Recommendations solution
 
-## Part 1 - QnA Maker with innocent drinks
+## Part 1 - QnA Maker with Innocent Drinks
 In this section you'll setup a simple Q&A Maker service base don the FAQs found on the Innocent drinks website. You'll then tune it slightly by adding your own data to the knowledge base
 
 ### Part 1.1 - Create QnA Maker Service
@@ -32,3 +32,6 @@ Note that you can also choose alternative answers and add additional phrasings t
 ### Part 1.3 - Publish
 1. Click Publish
 1. Note that you have an endpoint and `Ocp-Apim-Subscription-Key` which can be used to make simple API calls
+
+## Part 2 - Books Recommendations
+In this section you'll deploy the Cortana INtelligence Suite Recommendations solution to your Azure subscription and train it to provide book recommendations.
