@@ -34,4 +34,8 @@ Note that you can also choose alternative answers and add additional phrasings t
 1. Note that you have an endpoint and `Ocp-Apim-Subscription-Key` which can be used to make simple API calls
 
 ## Part 2 - Books Recommendations
-In this section you'll deploy the Cortana INtelligence Suite Recommendations solution to your Azure subscription and train it to provide book recommendations.
+In this section you'll deploy the Cortana Intelligence Suite Recommendations Solution to your Azure subscription and train it to provide book recommendations.
+
+### Part 1.1 - Deploy the Recommendations Solution
+1. Go to https://gallery.cortanaintelligence.com/Tutorial/Recommendations-Solution
+1. Click 'Deploy'
