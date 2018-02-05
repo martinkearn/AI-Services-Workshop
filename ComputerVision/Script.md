@@ -97,4 +97,10 @@ High level introduction of vision services as part of the wider cognitive servic
 4. Switch to transcript and show this
 
 ## Lab
-Switch to Lab
+1. Go to http://makaton.azurewebsites.net/
+
+2. Upload picture of Andy doing the rabbit sign and show results
+
+3. Navigate to https://www.customvision.ai/ and instruct everyone to do the same.
+
+4. The rest of this lab can be found in lab.md
