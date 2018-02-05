@@ -39,3 +39,16 @@ In this section you'll deploy the Cortana Intelligence Suite Recommendations Sol
 ### Part 1.1 - Deploy the Recommendations Solution
 1. Go to https://gallery.cortanaintelligence.com/Tutorial/Recommendations-Solution
 1. Click 'Deploy'
+1. Create a deployment
+    1. Deployment name: books
+    1. Subscription: (Use whatever subscription you are using)
+    1. Location UK South (or wherever your nearest data center is)
+1. Click 'Create'
+1. Click 'Next'
+1. Choose 'S1' for the App Service Plan and click 'Next'
+1. Choose 'Standard_LRS' for storage and click 'Next'
+1. Choose 'North Europe' for Application Insights and click 'Next'
+1. At the 'Next Steps' page, make sure you take a copy of this information (print to PDF)
+
+### Part 1.2 - Configure your recommendations build
+1. Click on the link for 'Recommendations UI' from the 'next steps' page in the previous section
