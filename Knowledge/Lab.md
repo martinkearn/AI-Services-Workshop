@@ -39,7 +39,7 @@ In this section, we'll publish the QnA Maker service so we can see the API end p
 ## Part 2 - Books Recommendations
 In this section you'll deploy the Cortana Intelligence Suite Recommendations Solution to your Azure subscription and train it to provide book recommendations.
 
-### Part 1.1 - Deploy the Recommendations Solution
+### Part 2.1 - Deploy the Recommendations Solution
 Unlike Cognitive Services, Cortana Intelligence Suite Solution will deploy several components to your own Azure subscription. This gives you a greater degree of control over how these components are used and how the overall solution is stitched together. In this section, we'll deploy the Recommendations solution to your Azure subscription.
 1. Go to https://gallery.cortanaintelligence.com/Tutorial/Recommendations-Solution
 1. Click 'Deploy'
@@ -54,17 +54,17 @@ Unlike Cognitive Services, Cortana Intelligence Suite Solution will deploy sever
 1. Choose 'North Europe' for Application Insights and click 'Next'
 1. At the 'Next Steps' page, make sure you take a copy of this information (print to PDF)
 
-### Part 1.2 - Upload data files to storage
-In this section we'll upload catalog and usage files which are used to train eth recommendations solution
+### Part 2.2 - Upload data files to storage
+In this section we'll upload catalog and usage files which are used to train the recommendations solution
 1. Go to http://portal.azure.com
-1. Go to 'Storage accounts' and click on the account where the first name and resource group matches the name you gave the solution deployment in part 1.1
+1. Go to 'Storage accounts' and click on the account where the first name and resource group matches the name you gave the solution deployment in part 2.1
 1. Click on 'blobs'
 1. Click on 'models'
 1. Upload both `books_catalog_large.txt` and `books_usage_large_WithTimestamps.txt` from in the same location as this `Lab.md` file
 1. Click `books_catalog_large.txt` and make a note of the `URL`. It will be something like 'https://booksqakksmxlyfm22st.blob.core.windows.net/models/books_catalog_large.txt'
-1. Click `books_usage_large_WithTimestamps.txt` and make a note of teh `URL`. It will be something like 'https://booksqakksmxlyfm22st.blob.core.windows.net/models/books_usage_large_WithTimestamps.txt'
+1. Click `books_usage_large_WithTimestamps.txt` and make a note of the `URL`. It will be something like 'https://booksqakksmxlyfm22st.blob.core.windows.net/models/books_usage_large_WithTimestamps.txt'
 
-### Part 1.3 - Configure your Recommendations build
+### Part 2.3 - Configure your Recommendations build
 In this section we'll configure a build. This is where the recommendations solution uses machine learning to make work out the recommendations for each catalog item based on both catalog and usage data.
 1. Click on the link for 'Recommendations UI' from the 'next steps' page in the previous section
 1. Enter the 'Admin API key' from the previous step and click 'Login'
@@ -76,7 +76,7 @@ In this section we'll configure a build. This is where the recommendations solut
     1. Enable Cold to Cold Recommendations: 'True'
 1. Click 'Train' and wait about 5 minutes until the status is 'completed'
 
-### Part 1.4 - Test you Recommendations build
+### Part 2.4 - Test you Recommendations build
 _The build time from the previous section can vary so it may be that if your build is still running you simply watch the presenter do this bit on a pre-configured build and come back to re-visit these steps later_
 
 In this section we'll test the build out to see what recommendations are being made for specified catalog items (books).
