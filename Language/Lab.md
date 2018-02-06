@@ -1,8 +1,8 @@
 # Language
 Cognitive services has a language offering which can be integrated into applications, websites and tools, allowing real-time translation of 60+ supported languages, analysis of sentiment, key phrase extraction, and much more. We’ll also look at an example of how we can add language understanding with LUIS to make our bots and applications smarter.
 
-## Lab - create a machine learning model using the Custom Vision API
-In this lab you'll be using Custom Vision to create a machine learning model that can classify whether a person is making the sign for "rabbit" or the sign for "sleep". We'll then test and improve our model using new images.
+## Lab - create a LUIS model that can be used in the How Happy app
+In this lab you'll be using LUIS to create a language model that can classify the intents and entities of an utterance. We'll then test and improve our model using new utterances.
 
 ### Part 1 - Create the language understanding app
 
@@ -79,7 +79,7 @@ An example utterance for this would be "Show me all the happy people"
 ### Part 9 - Retrain our language model
 1. Select the `Train` button in the top right of your screen
 
-### Part 10 - Re-test our model
+### Part 10 - Retest our model
 1. Select `Test` in the top right of your screen
 2. Type `Who is the most happy?` as a test utterance.
 3. Type `Who is the most angry?` as a test utterance.
