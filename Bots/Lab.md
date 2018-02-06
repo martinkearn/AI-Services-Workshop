@@ -7,7 +7,7 @@ In this lab you'll be creating your very own chatbot which is publically accessi
 ### Part 1 - Create Azure Bot Service
 
 1. Navigate to the [Azure Portal](https://portal.azure.com), Create a new resource, select AI + Cognitive Services and Web App Bot
-2. Create a unique Bot name and select a new Resource Group called "RG-BotLab", 
+2. Choose a unique Bot name and select a new Resource Group called `RG-BotLab`, 
 3. Within Bot template - select your desired SDK language: C# or Node.js
 4. Select "Language understanding" template
 5. Complete the other required fields
@@ -26,16 +26,17 @@ Let's add some AI to the bot, so that it can understand it's human users.  In th
     * Sup
     * Hey
 4. Select Manage prebuilt entities, select datetimev2
-5. Add another new intent called "Time", add as many ways of asking for the time eg.
-    * What is the time?
+5. Add another new intent called `Time`, add as many ways of asking for the time eg.
+    * What is the date?
     * Tell me the time
-    * Give me the time?    
-6. The Time intent will also be able to calculate time differences if the user specifies a time period.  So add a few ways the user may ask this eg.
-    * How long until 31st August 2019
+    * Give me the time?
+    * What date is it?  
+6. The Time intent will also be able to determine the date even if the user specifies a time phrase.  So add a few ways the user may ask this eg.
+    * What is the date today?
     * What was the date yesterday?
     * What is the date next Saturday?
 7. Train the model
-8. Within the Publish tab, take a note of the resources and keys that have been automatically setup within the region you selected when you created the Azure Resource Group.  Here you can see the LUIS API key and app guid within the endpoint url eg:
+8. Publish the model - Within the Publish tab, take a note of the resources and keys that have been automatically setup within the region you selected when you created the Azure Resource Group.  Here you can see the LUIS API key and app guid within the endpoint url eg:
 https://westeurope.api.cognitive.microsoft.com/api/v2.0/apps/bc12afb6-af83-449e-8add-be96961a876b?subscription-key=1113901549614ef893ea757807e79c00&verbose=true&timezoneOffset=0&q= 
 
 > As part of the template you've used, the Bot has already been wired up to > the LUIS model, you can check this within the App Settings within the Azure portal for Web App Bot.  You'll notice the same keys from following:
@@ -49,6 +50,95 @@ https://westeurope.api.cognitive.microsoft.com/api/v2.0/apps/bc12afb6-af83-449e-
 ### Part 4 - Creating some custom logic within your bot using VS Code
 Now we need to handle the LUIS intents that will be resolved by our LUIS model.  This is the code that will get fired when any LUIS intent is detected.
 
+## Node.js
 1. Within Azure Portal, Web App Bot, select the Build tab and "Download zip file", extract the zip file contents to a local folder.
 2. Open VS Code and open the folder containing your bot code
-3. If using Node.js open the app.js file
+3. Within the Terminal window (or from the commmand line) run:
+```
+npm install
+```
+4. Add a launch file containing the environment variables for debug (in this case, we'll just use the ones already provisioned).  Add the following section using values from the Bot App Settings above:
+```
+"env": {
+    "LuisAppId": "{yourappid}",
+    "LuisAPIKey": "{yourapikey}",
+    "LuisAPIHostName": "westeurope.api.cognitive.microsoft.com",
+    "AzureWebJobsStorage": "{yourwebjobsstorage}"
+}
+```
+5. Open the app.js file and add the logic for the `Time` intent eg:
+```
+.matches('Time', (session, args) => {
+     // Check to see if we've been passed a time period
+     var entities = args.entities;
+     var dateEntity = builder.EntityRecognizer.findEntity(entities, 'builtin.datetimeV2.date');
+     
+    if (dateEntity) {
+        // Always looking for future dates - might get multiple values back if it's ambiguous
+        // https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-reference-prebuilt-entities#builtindatetimev2
+        var futureDate = new Date(dateEntity.resolution.values.slice(-1)[0]['value']);
+        session.send('The date %s is %s', dateEntity.entity, futureDate.toLocaleDateString());
+    }
+    else {
+        session.send('The current date and time is %s', new Date().toGMTString())
+    }
+})
+```
+6. Download and run [botframework-emulator](https://emulator.botframework.com/)
+Connect the emulator to http://localhost:3987/api/messages (no App ID/Password requried)
+7. Test the different intents in the bot
+8. Publish the changes to your production bot, within VS Code or from the command line run (can take a few minutes):
+```
+node publish.js
+```
+9. Return to the Azure portal and open "Test in Web Chat", test your production bot to make sure it runs the latest code.
+
+## C#
+1. Within Azure Portal, Web App Bot, select the Build tab and "Download zip file", extract the zip file contents to a local folder.
+2. Open Visual Studio and open the solution in the folder containing your bot code
+3. Right click on the solution folder and select "Restore Nuget Packages"
+4. Edit the web.config file to add the environment variables for debug (in this case, we'll just use the ones already provisioned).  Add the following section using values from the Bot App Settings above:
+```
+    <add key="LuisAppId" value="{yourappid}"/>
+    <add key="LuisAPIKey" value="yourkey"/>
+    <add key="LuisAPIHostName" value="westeurope.api.cognitive.microsoft.com"/>
+    <add key="AzureWebJobsStorage" value="yourwebjobsstorage"/}
+```
+5. Open the BasicLuisDialog.cs file and add the logic for the `Time` LUIS intent eg:
+```
+ [LuisIntent("Time")]
+        public async Task TimeIntent(IDialogContext context, LuisResult result)
+        {
+            string msg = "";
+            EntityRecommendation dateEntity = new EntityRecommendation();
+            if (result.TryFindEntity("builtin.datetimeV2.date", out dateEntity))
+            {
+                if (dateEntity.Resolution.Any())
+                {
+                    // Get the collection of objects at index 0 where the KVP is
+                    var resolutionList = dateEntity.Resolution.Values?.ToList()[0] as List<object>;
+
+                    // Always looking for future dates - might get multiple values back if it's ambiguous
+                    // https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-reference-prebuilt-entities#builtindatetimev2
+                    var keyValPairsList = resolutionList[resolutionList.Count - 1] as Dictionary<string, object>;
+
+                    DateTime futureDate = Convert.ToDateTime(keyValPairsList["value"].ToString());
+                    msg = $"The date {dateEntity.Entity} = {futureDate.ToLongDateString()}";
+                }
+            }
+            else
+            {
+                msg = $"The current date and time is {DateTime.Now.ToLocalTime()}";
+            }
+            await context.PostAsync(msg);
+            context.Wait(MessageReceived);
+        }
+```
+6. Download and run [botframework-emulator](https://emulator.botframework.com/)
+Connect the emulator to http://localhost:3984/api/messages (no App ID/Password requried)
+7. Test the different intents in the bot
+8. Publish the changes to your production bot, within Visual Studio or from the command line run (can take a few minutes):
+```
+publish.cmd
+```
+9. Return to the Azure portal and open "Test in Web Chat", test your production bot to make sure it runs the latest code.
