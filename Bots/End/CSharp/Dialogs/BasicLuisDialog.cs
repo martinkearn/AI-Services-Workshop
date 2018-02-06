@@ -60,13 +60,7 @@ namespace Microsoft.Bot.Sample.LuisBot
 
                     // Check if we have an ambiquous date (XXXX) if so then replace with the year we extracted above
                     DateTime futureDate = Convert.ToDateTime(keyValPairsList["value"].ToString());
-
                     msg = $"The date {dateEntity.Entity} = {futureDate.ToLongDateString()}";
-
-                    // Now check if they've asked for a specific interval period
-                    //EntityRecommendation timePeriod = new EntityRecommendation();
-                    //result.TryFindEntity("period", out EntityRecommendation timePeriod);
-                    //msg = $"Target {targetDate.ToString("dd MMMM yyyy")} - " + GetDurationText(ts, timePeriod);
                 }
             }
             else

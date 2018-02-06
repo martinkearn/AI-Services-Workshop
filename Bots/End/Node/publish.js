@@ -45,8 +45,8 @@ function publish(callback) {
 
 publish(function(err) {
   if (!err) {
-    console.log('jdbotrunthrough publish');
+    console.log('botlab publish');
   } else {
-    console.error('failed to publish jdbotrunthrough', err);
+    console.error('failed to publish botlab', err);
   }
 });
