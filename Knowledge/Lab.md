@@ -78,7 +78,21 @@ In this section we'll configure a build. This is where the recommendations solut
 
 The training process can take a while. Your instructor will now show the rest of the lab on a pre-trained model, but steps are provided below for you to follow at a later date.
 
-### 2.4 - Test you Recommendations build
+### 2.4 - Test your Recommendations build
 In this section we'll test the build out to see what recommendations are being made for specified catalog items (books).
 
-<TO DO>
+1. Access the Recommendation UI. The link will be in the information you saved at the end of step 2.1. It will look something like https://booksqakksmxlyfm22ws.azurewebsites.net/ui/
+1. Check that the Status is 'Completed'
+1. Click 'Score' to test the model
+In 'Test Item Recommendations' enter `60234814` which is the ID of a book called 'The Lion the Witch and the Wardrobe'. Notice that 10 results are returned.
+1. Search for the first recommended book in your `books_catalog_large.txt` file which should be `345339681` which is 'The Hobbit'; a related fantasy based novel.
+
+### 2.5 Look at the API reference
+In this section, we'll explore the API.
+
+1. Access your Swagger site. The link will be in the information you saved at the end of step 2.1. It will look something like https://booksqakksmxlyfm22ws.azurewebsites.net/swagger
+1. Enter the 'Admin Key' in the 'API Key' section and click 'Explore'
+1. Click 'List Operations' to see tehvarious API operations
+1. Click on `/api/models/default/recommend`
+1. Set `60234814` as the 'itemId' and click 'Try it out'
+1. Observe the JSON that gets returned
