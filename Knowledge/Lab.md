@@ -6,7 +6,7 @@ In this section you'll setup a simple Q&A Maker service base don the FAQs found 
 
 ### 1.1 - Create QnA Maker Service
 In this section we'll configure a new QnA Maker service using the Innocent drinks FAQ pages.
-1. Go to https://www.innocentdrinks.co.uk/us/contact-us/faqs#faq-content and have a look at the FAQs
+1. Go to https://www.innocentdrinks.co.uk/us/contact-us/faqs#faq-content (or search "Innocent Drink FAQ") and have a look at the FAQs
 1. Go to https://qnamaker.ai
 1. Sign In
 1. Click 'Create new service'
@@ -41,8 +41,8 @@ In this section you'll deploy the Cortana Intelligence Suite Recommendations Sol
 
 ### 2.1 - Deploy the Recommendations Solution
 Unlike Cognitive Services, Cortana Intelligence Suite Solution will deploy several components to your own Azure subscription. This gives you a greater degree of control over how these components are used and how the overall solution is stitched together. In this section, we'll deploy the Recommendations solution to your Azure subscription.
-1. Go to https://gallery.cortanaintelligence.com/Tutorial/Recommendations-Solution
-1. Click 'Deploy'
+
+1. Go to https://aka.ms/recotemplate
 1. Create a deployment
     1. Deployment name: books
     1. Subscription: (Use whatever subscription you are using)
@@ -53,6 +53,8 @@ Unlike Cognitive Services, Cortana Intelligence Suite Solution will deploy sever
 1. Choose 'Standard_LRS' for storage and click 'Next'
 1. Choose 'North Europe' for Application Insights and click 'Next'
 1. At the 'Next Steps' page, make sure you take a copy of this information (print to PDF)
+
+Detailed deployment instructions can be also found here: https://github.com/Microsoft/Product-Recommendations/blob/master/doc/deployment-instructions.md
 
 ### 2.2 - Upload data files to storage
 In this section we'll upload catalog and usage files which are used to train the recommendations solution
