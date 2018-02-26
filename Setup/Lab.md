@@ -30,7 +30,7 @@ If you don't already have Azure (or want your own subscription just for today), 
 
 ### 4.1 Get a trial promo code
 1. Go to http://aka.ms/AzurePassManager
-1. Enter 'AIServicesWorkshop' as an event name
+1. Enter 'AIEvent' as an event name
 1. Click 'Find event'
 1. Click 'Claim your code'
 1. Make a note of the code that you are given (you'll only see this once)
