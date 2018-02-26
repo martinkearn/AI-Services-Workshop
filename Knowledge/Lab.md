@@ -1,10 +1,10 @@
 # Knowledge Services Lab
 In this lab you'll learn about the Q&A Maker service and the Cortana Intelligence Recommendations solution
 
-## Part 1 - QnA Maker with Innocent Drinks
+## 1 - QnA Maker with Innocent Drinks
 In this section you'll setup a simple Q&A Maker service base don the FAQs found on the Innocent drinks website. You'll then tune it slightly by adding your own data to the knowledge base
 
-### Part 1.1 - Create QnA Maker Service
+### 1.1 - Create QnA Maker Service
 In this section we'll configure a new QnA Maker service using the Innocent drinks FAQ pages.
 1. Go to https://www.innocentdrinks.co.uk/us/contact-us/faqs#faq-content and have a look at the FAQs
 1. Go to https://qnamaker.ai
@@ -18,7 +18,7 @@ In this section we'll configure a new QnA Maker service using the Innocent drink
 
 Note that the test bot gives the answer for the question "How do you make your orange juice?" which is not exactly what was asked
 
-### Part 1.2 - Add to knowledge base
+### 1.2 - Add to knowledge base
 In this section we'll add extra information to the knowledge base which is missing from the FAQ pages
 1. Ask "What do you make" and note that an inappropriate answer is given
 1. Go to 'Knowledge base'
@@ -31,15 +31,15 @@ In this section we'll add extra information to the knowledge base which is missi
 
 Note that you can also choose alternative answers and add additional phrasings to make the knowledge base broader.
 
-### Part 1.3 - Publish
+### 1.3 - Publish
 In this section, we'll publish the QnA Maker service so we can see the API end point and key.
 1. Click Publish
 1. Note that you have an endpoint and `Ocp-Apim-Subscription-Key` which can be used to make simple API calls
 
-## Part 2 - Books Recommendations
+## 2 - Books Recommendations
 In this section you'll deploy the Cortana Intelligence Suite Recommendations Solution to your Azure subscription and train it to provide book recommendations.
 
-### Part 2.1 - Deploy the Recommendations Solution
+### 2.1 - Deploy the Recommendations Solution
 Unlike Cognitive Services, Cortana Intelligence Suite Solution will deploy several components to your own Azure subscription. This gives you a greater degree of control over how these components are used and how the overall solution is stitched together. In this section, we'll deploy the Recommendations solution to your Azure subscription.
 1. Go to https://gallery.cortanaintelligence.com/Tutorial/Recommendations-Solution
 1. Click 'Deploy'
@@ -54,7 +54,7 @@ Unlike Cognitive Services, Cortana Intelligence Suite Solution will deploy sever
 1. Choose 'North Europe' for Application Insights and click 'Next'
 1. At the 'Next Steps' page, make sure you take a copy of this information (print to PDF)
 
-### Part 2.2 - Upload data files to storage
+### 2.2 - Upload data files to storage
 In this section we'll upload catalog and usage files which are used to train the recommendations solution
 1. Go to http://portal.azure.com
 1. Go to 'Storage accounts' and click on the account where the first name and resource group matches the name you gave the solution deployment in part 2.1
@@ -64,7 +64,7 @@ In this section we'll upload catalog and usage files which are used to train the
 1. Click `books_catalog_large.txt` and make a note of the `URL`. It will be something like 'https://booksqakksmxlyfm22st.blob.core.windows.net/models/books_catalog_large.txt'
 1. Click `books_usage_large_WithTimestamps.txt` and make a note of the `URL`. It will be something like 'https://booksqakksmxlyfm22st.blob.core.windows.net/models/books_usage_large_WithTimestamps.txt'
 
-### Part 2.3 - Configure your Recommendations build
+### 2.3 - Configure your Recommendations build
 In this section we'll configure a build. This is where the recommendations solution uses machine learning to make work out the recommendations for each catalog item based on both catalog and usage data.
 1. Click on the link for 'Recommendations UI' from the 'next steps' page in the previous section
 1. Enter the 'Admin API key' from the previous step and click 'Login'
@@ -74,11 +74,11 @@ In this section we'll configure a build. This is where the recommendations solut
     1. Catalog File Relative Path: 'books_catalog_large.txt'
     1. Enable Cold Item Placement: 'True'
     1. Enable Cold to Cold Recommendations: 'True'
-1. Click 'Train' and wait about 5 minutes until the status is 'completed'
+1. Click 'Train'.
 
-### Part 2.4 - Test you Recommendations build
-_The build time from the previous section can vary so it may be that if your build is still running you simply watch the presenter do this bit on a pre-configured build and come back to re-visit these steps later_
+The training process can take a while. Your instructor will now show the rest of the lab on a pre-trained model, but steps are provided below for you to follow at a later date.
 
+### 2.4 - Test you Recommendations build
 In this section we'll test the build out to see what recommendations are being made for specified catalog items (books).
 
-
+<TO DO>
