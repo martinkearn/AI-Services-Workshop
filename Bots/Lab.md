@@ -69,6 +69,7 @@ npm install
 ```
 4. Add a launch file containing the environment variables for debug (in this case, we'll just use the ones already provisioned).  Add the following section using values from the Bot App Settings above:
 ```json
+"program": "${workspaceFolder}\\app.js",
 "env": {
     "LuisAppId": "{yourappid}",
     "LuisAPIKey": "{yourapikey}",
