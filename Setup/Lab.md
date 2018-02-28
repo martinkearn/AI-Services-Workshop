@@ -43,7 +43,7 @@ If you don't have an existing subscription and are not willing to use your credi
 1. Open Slack and go to the 'AIServicesWorkshop' workspace
 1. Go to 'Azure Pass Bot' (under apps in the left navigation)
 1. As the bot for a pass using something like "can I have a pass"
-1. When prompted enter `AIEvent` as the event name
+1. When prompted, enter the code the presenter gives you as the event name
 1. Make a note of the pass that the bot gives you
 1. Go to https://www.microsoftazurepass.com/
 1. Sign in with a 'Microsoft account' (i.e. Outlook.com, Hotmail.co.uk, Live.co.uk etc .....cannot be a school or organisation account)
