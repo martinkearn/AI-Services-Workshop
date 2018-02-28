@@ -142,10 +142,10 @@ Note the visualisation and matrix of scores.
 
 Our most important results for classification are:
 
-Accuracy = True positives + true negatives
-Recall = True positives/(true positives + false negatives)
-Precision = True positives/(true positives + false positives)
-F1 Score = .2 * (precision*recall)/(precision+recall)
+Accuracy = True positives + true negatives<br>
+Recall = True positives/(true positives + false negatives)<br>
+Precision = True positives/(true positives + false positives)<br>
+F1 Score = .2 * (precision*recall)/(precision+recall)<br>
 
 But don't worry about the maths, the tool calculates all these for you, weighted between 0 and 1 (1 of course being perfect).
 
@@ -184,13 +184,13 @@ After the service is published, we should be redirected to a web services page s
 1. Go to the configuration tab and make sure "enable sample data" is set to "yes".
 2. Return to the dashboard for your web service, and click "Test". This will give us a simple dialog to test the web service using mock test data (no need to build an app to make sure it's working for you). Enter your test values as follows (or use custom test data if you're comfortable with requirements for getting realistic predicitons):
 
-DepDelay = 33
-Divide(CRSDEPTIME_$100) = 8
-Month = 4
-Altimeter = 29.6
-Carrier = DL
-SeaLevelPressure = 30
-DewPointCelsius = 1.7
+DepDelay = 33<br>
+Divide(CRSDEPTIME_$100) = 8<br>
+Month = 4<br>
+Altimeter = 29.6<br>
+Carrier = DL<br>
+SeaLevelPressure = 30<br>
+DewPointCelsius = 1.7<br>
 
 3. You should notice that the output is a JSON response containing predicted scores we could easily parse and use in our application code. 
 
