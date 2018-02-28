@@ -1,11 +1,9 @@
 # Computer Vision
 There is a wealth of information contained in images. Microsoft’s computer vision services help us to understand that visual data as text, such as providing captions, recognizing handwritten text, and identifying emotions. In this session we’ll explore what is possible with the vision based APIs, and see how they’re used in real-world applications. 
 
-## Lab - create a machine learning model using the Custom Vision API
 In this lab you'll be using Custom Vision to create a machine learning model that can classify whether a person is making the sign for "rabbit" or the sign for "sleep". We'll then test and improve our model using new images.
 
-### Part 1 - Create the machine learning model
-
+## 1 - Create the machine learning model
 1. Navigate to [Custom Vision](https://www.customvision.ai/), and sign in using the Azure account you created during Martin's [Setup](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Setup/Lab.md) session.
 2. Create a New Project 
 * Name: Fusion Birmingham
@@ -23,16 +21,16 @@ In this lab you'll be using Custom Vision to create a machine learning model tha
 * It should tell us 1 image was a duplicate
 5. Click the green `Train` model button
 
-### Part 2 - Testing our model
+## 2 - Testing our model
 1. Select `Quick Test` and upload an image
 * Either find a willing volunteer to take your picture 
 * or navigate to the `TestImages` folder and select one of those
 
-### Part 3 - Improving our model
+## 3 - Improving our model
 1. Navigate to the `Predictions` tab
 2. You'll see the images that you tested, if you hover over them you'll see the predictions (right or wrong)
 3. Go through and tag these images with their correct labels
 
-### Part 4 - Retrain the model
+## 4 - Retrain the model
 1. Select `Train`
 * Compare the `Precision` and `Recall` between the iterations

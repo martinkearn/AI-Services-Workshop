@@ -1,10 +1,9 @@
 # Bots
 Bots are a new type of App. One which fundamentally changes we the way we interact with our devices. Bots will lead to a world where we are using natural language to interact with device and services. Microsoft are investing heavily in bots with the Microsoft Bot Framework and Azure Bot Service. In this talk we'll look at what a bot is, design patterns for bots and the Microsoft Bot Framework which lets you write a single bot that is published to multiple social channels such as Skype, Facebook and Slack.
 
-## Lab - create a new Azure Bot Service with natural language understanding capability
 In this lab you'll be creating your very own chatbot which is publically accessible and that can understand users using Microsoft Cognitive Services.
 
-### Part 1 - Create Azure Bot Service
+## 1 - Create Azure Bot Service
 
 1. Navigate to the [Azure Portal](https://portal.azure.com), Create a new resource, select AI + Cognitive Services and Web App Bot
 2. Choose a unique Bot name and select a new Resource Group called `RG-BotLab`, 
@@ -24,7 +23,7 @@ In this lab you'll be creating your very own chatbot which is publically accessi
 > | Application Insights | Telemetry & error data for the bot |
 > | Storage account | Bot state |
 
-### Part 2 - Create Language understanding model
+## 2 - Create Language understanding model
 A basic bot has now been provisioned for you, now let's add some AI to it, so that it can understand it's human users.  In this example, the model will be able to determine simple greetings and be able to tell the current and future date and times.
 
 1. Navigate to the [Luis portal](https://luis.ai)
@@ -55,7 +54,7 @@ https://westeurope.api.cognitive.microsoft.com/api/v2.0/apps/{yourappid}?subscri
 > | LuisAPIKey | {yourapikey} |
 > | LuisAPIHostName | westeurope.api.cognitive.microsoft.com |
 
-### Part 4 - Creating some custom logic within your bot using VS Code
+## 3 - Creating some custom logic within your bot using VS Code
 Now we need to handle the LUIS intents that will be resolved by our LUIS model.  This is the code that will get fired when any LUIS intent is detected.
 
 ---
