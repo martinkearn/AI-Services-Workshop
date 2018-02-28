@@ -132,7 +132,7 @@ So we have another output of our split data module. Now to score the model to ge
 
 You've just built your first machine learning model in ML Studio!    
 
-## 3 Evaluating the model
+## 3 - Evaluating the model
 Now to evaluate the results.
 
 1. Drag an "Evaluate model" module into your workspace, connecting the output of "score model" to its input. 
@@ -153,7 +153,7 @@ This model isn't too bad for a first try!
 
 Note: with multiple evaluaton results we can actually compare them side-by-side. There are lots of options for optimization and tweaks you can make to your model, that may be useful in further iterations, before you deploy. This is done by just dragging more modules into the workspace, hooking them up, and setting your parameters as you'd like them, or running with the defaults. 
 
-## 4 Deploying the model as a web service.
+## 4 - Deploying the model as a web service.
 
 Ok! So we've built a machine learning model, now we want to make use of it in our application.
 
