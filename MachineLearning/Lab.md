@@ -92,11 +92,11 @@ So now we've selected the arrival delay column we'll tag it as the "Label" of ou
 3. Drag another "edit metadata" module into the workspace below the first, and use it to label all other columns as features. Beginning with all columns, and excluding all labels.
 4. Now we need to split out data 80:20 into training and test data. Search for the "split data module and drag it into your workspace, connecting its input to output of the most recent module. Click on the module and ensure its values are: 
 
-Splitting mode: "Split Rows"
-Fraction of rows in the first output dataset: 0.8
-Randomized split: checked
-Random seed: 0
-Stratified split: True
+Splitting mode: "Split Rows"<br>
+Fraction of rows in the first output dataset: 0.8<br>
+Randomized split: checked<br>
+Random seed: 0<br>
+Stratified split: True<br>
 
 ...and then select all labels using the column selector. 
 
@@ -107,12 +107,12 @@ Now we're going to build our classifier.
 
 The values within this module should be:
 
-Create trainer mode: Single Parameter
-Optimization tolerance: 1E-07
-L1 regularization weight: 1
-L2 regularization weight: 1
-Memory size for L-BFGS: 20
-Random number seed: 
+Create trainer mode: Single Parameter<br>
+Optimization tolerance: 1E-07<br>
+L1 regularization weight: 1<br>
+L2 regularization weight: 1<br>
+Memory size for L-BFGS: 20<br>
+Random number seed: <br>
 Allow unknown categorical levels: checked
 
 Note how this allows you to customize on a low level how the machine learning model is implemented, but you can just use defaults or conventions here depending on your use case. That's all you NEED to know.  
@@ -172,7 +172,7 @@ We'll need to reconfigure the logic of the predictive web service a little befor
 A new module may be added as a placeholder for a separate experiment which retrains the model. This shows how we can implement continuous learning for our web service. 
 
 ### 4.1 Time to publish!
-Now we've build our web service, it's time to publish and make use of it. Click the "deploy web service" button in the bottom toolbar. 
+Now we've build our web service, it's time to publish and make use of it. Hover over the "deploy web service" button in the bottom toolbar and click "Deploy Web Service [New] Preview". 
 
 Once published, we can make use of it to get our scored labels and probabilities using a simple REST API call, something we should all be familiar with.
 
@@ -182,7 +182,7 @@ Let's make sure the things working.
 After the service is published, we should be redirected to a web services page showing those that we've published. Here we can find details such as the necessary API key, endpoint information - everything we need to make use of the service.
 
 1. Go to the configuration tab and make sure "enable sample data" is set to "yes".
-2. Return to the dashboard for your web service, and click "Test". This will give us a simple dialog to test the web service using mock test data (no need to build an app to make sure it's working for you). Enter your test values as follows (or use custom test data if you're comfortable with requirements for getting realistic predicitons):
+2. Return to the dashboard for your web service, and click "Test". This will give us a simple dialog to test the web service using mock test data (no need to build an app to make sure it's working for you). Enter some test values as follows (or use custom test data if you're comfortable with requirements for getting realistic predictions):
 
 DepDelay = 33<br>
 Divide(CRSDEPTIME_$100) = 8<br>
@@ -192,8 +192,8 @@ Carrier = DL<br>
 SeaLevelPressure = 30<br>
 DewPointCelsius = 1.7<br>
 
-3. You should notice that the output is a JSON response containing predicted scores we could easily parse and use in our application code. 
+3. As expected, the output includes our scored label (the classification result, 1 for positive, 0 for negative), and a score for probability or certainty about this classification result. When calling the web service via an http request, this - or whatever the output of your web service is -  would be returned as part of a JSON response that you can parse and deliver to users however you'd like.
 
-So what we have? Just an API, but it's also real, data-informed machine learning which predicts something given a custom set of conditions. And you built it!
+So what do we have? Just an API, but it's also real, data-informed machine learning which predicts something given a custom set of conditions. And you built it!
 
 
