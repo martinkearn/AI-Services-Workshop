@@ -26,6 +26,7 @@ In turn, from top to bottom, here's what each bubble in the first (leftmost) col
 3. The third module selects specific columns from the dataset. This is done by launching the columns selector and setting a logical rule. In this case we begin with all columns, and exclude DepartureDel15, ArrDelay, Cancelled, Year, DayOfWeek, and CRSArrTime.
 
 This excludes columns we don't need in our dataset for the purposes we'll use it for, so you can do all your data processing in the tool.
+
 4. Next we use a "clean missing data" module to remove rows in which there is missing data, so the dataset we use is as complete as possible, which should make our modelling more accurate.
 5. The fifth module is "Edit Metadata". Here we are using it to change IDs used to recognize carriers and airports to categorical form, as before they were entered as strings.
 6. Next we apply a math operation, to divide a time value by a constant 100. Math operations available range from simple arithmetic to much more complex operations, again all in-tool.
@@ -33,6 +34,7 @@ This excludes columns we don't need in our dataset for the purposes we'll use it
 
 ### 1.4 - The second column
 The second column in the dataprep experiment, from top to bottom, does the following:
+
 1. The first module is the raw dataset. In this case weather data including several types of temperature, sky condition, and visibility information.
 2. The second module sets missing data to a custom value, making it easier for us humans to see where data is missing.
 3. The third module selects specific columns from the dataset. In this case we begin with all columns, and exclude ValueForWindCharacter, WetBulbFarenheit, PressureTendency, PressureChange, StationPressure, DryBulbFarenheit, DewPointFarenheit, and Year. We've identified that these things aren't important to the departure and delay of flights.
