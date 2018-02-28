@@ -14,7 +14,7 @@ These are Markdown files with supporting files where required which guide you th
 
 [Bots](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Bots/Lab.md)
 
-[Machine Learning](https://github.com/martinkearn/AI-Services-Workshop/blob/master/MachineLearning/Lab.md)]
+[Machine Learning](https://github.com/martinkearn/AI-Services-Workshop/blob/master/MachineLearning/Lab.md)
 
 ## Slides
 These are PDF exports of the slides you'll have seen during the workshop
