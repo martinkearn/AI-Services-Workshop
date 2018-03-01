@@ -18,7 +18,6 @@ In this lab you'll be using Custom Vision to create a machine learning model tha
 * Now we're going to add the `Sleep` training images using the same method which you can find in the `Sleep` folder
 * Once the images have uploaded we can tag them as `sleep`
 * Select to `Upload` the 5 files
-* It should tell us 1 image was a duplicate
 5. Click the green `Train` model button
 
 ## 2 - Testing our model
