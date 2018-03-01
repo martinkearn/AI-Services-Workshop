@@ -12,12 +12,12 @@ In this lab you'll be using Custom Vision to create a machine learning model tha
 3. Add some training images (these are provided in the [Training Images](https://github.com/martinkearn/AI-Services-Workshop/tree/master/ComputerVision/TrainingImages) folder)
 * We're going to start by adding the `Rabbit` training images
 * Once the images have uploaded you will be asked to add some tags to this batch of images. We're going to add the tag `rabbit` here (make sure to press the `+` symbol to add the tag)
-* Select to `Upload` the 32 files
+* Select to `Upload` the 5 files
 * Once this is done it should tell us 2 of the images were duplicates
 4. Add some more training images
 * Now we're going to add the `Sleep` training images using the same method which you can find in the `Sleep` folder
 * Once the images have uploaded we can tag them as `sleep`
-* Select to `Upload` the 27 files
+* Select to `Upload` the 5 files
 * It should tell us 1 image was a duplicate
 5. Click the green `Train` model button
 
