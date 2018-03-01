@@ -114,6 +114,7 @@ L2 regularization weight: 1<br>
 Memory size for L-BFGS: 20<br>
 Random number seed: <br>
 Allow unknown categorical levels: checked
+Stratification key column: All labels
 
 Note how this allows you to customize on a low level how the machine learning model is implemented, but you can just use defaults or conventions here depending on your use case. That's all you NEED to know.  
 
