@@ -7,7 +7,7 @@ In this lab you'll be using LUIS to create a language model that can classify th
 
 1. Navigate to [LUIS](https://www.luis.ai/home), and sign in using the Azure account you created during Martin's [Setup](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Setup/Lab.md) session.
 2. Create a New App
-* Name: Fusion Birmingham
+* Name: AI Workshop
 * Culture: English
 * Description: Hospital application
 
@@ -54,7 +54,7 @@ You'll see we've got an entity here that we want to pick out, and that's the nam
 * Click on 'John' and then move the cursor over to 'Smith' and click, so that the square braces include the entire name. Label it 'Name'.
 * Do the same with the other utterances. 
 
-## 5 - Add the 'DischargeDate' intent
+## 6 - Add the 'DischargeDate' intent
 1. The final intent we wish to add is one that will trigger when we want to find out who is due to leave the hospital. Go to Intents > Create a new intent.
 * Intent name: DischargeDate
 2. Go to Entities > Manage prebuilt entities
@@ -67,7 +67,7 @@ You'll see we've got an entity here that we want to pick out, and that's the nam
 * 'Which patients are due to be discharged?'
 
 
-## 6 - Train the model
+## 7 - Train the model
 1. Click the train button in the upper right!
 2. Click the test button in the upper right.
 3. Type a test utterance e.g. 'Where is Alice Richards?'
