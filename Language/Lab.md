@@ -71,3 +71,61 @@ You'll see we've got an entity here that we want to pick out, and that's the nam
 1. Click the train button in the upper right!
 2. Click the test button in the upper right.
 3. Type a test utterance e.g. 'Where is Alice Richards?'
+
+## Publishing a model
+1. Go to 'Publish' in the top right
+2. Select 'Publish to production slot' (blue button)
+3. Once that's done click on the endpoint url which is at the bottom. You'll see a result which looks like this:
+```json
+{"query":null,"intents":[],"entities":[]}
+```
+4. At the end of the url append 'where is there a bed free on ward 1a?' and press enter. You'll see the JSON response:
+```json
+{
+  "query": "where is there a bed free on ward 1a?",
+  "topScoringIntent": {
+    "intent": "FreeBed",
+    "score": 1.0
+  },
+  "intents": [
+    {
+      "intent": "FreeBed",
+      "score": 1.0
+    },
+    {
+      "intent": "FindPatient",
+      "score": 0.00712564448
+    },
+    {
+      "intent": "DischargeDate",
+      "score": 0.00711164251
+    },
+    {
+      "intent": "None",
+      "score": 0.00588066457
+    }
+  ],
+  "entities": [
+    {
+      "entity": "1a",
+      "type": "WardNo",
+      "startIndex": 34,
+      "endIndex": 35,
+      "resolution": {
+        "values": [
+          "1a"
+        ]
+      }
+    }
+  ]
+}
+```
+* You can see the different intents and their corresponding confidence score - note that our 'FreeBed' intent is the highest scoring by a considerable margin. The detected entities are also listed, and we can see that ward '1a' has been detected, and where in the string.
+
+## Exporting and importing a model
+1. Go to 'My apps' in the top left
+2. Find the LUIS project, you'll see 'Culture', 'Created date' and 'Endpoint hits'. Finally there's three dots, click that and select 'Export App'.
+* You can use this to share your LUIS model with others. 
+3. To import a model, select 'Create new app'.
+4. Go to Settings in the top right.
+5. Click 'Import new version', select the .json model that was exported, and name it v2.
