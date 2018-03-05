@@ -40,9 +40,9 @@ You can see that the Ward entity has been automatically tagged because they are 
 * 'Where's John Smith?'
 You'll see we've got an entity here that we want to pick out, and that's the name of the patient, so let's make that now.
 
-## 5 - Add the 'Patient' entity
+## 5 - Add the 'PatientName' entity
 1. Go to Entities > Create new entity
-* Entity name: Patient
+* Entity name: PatientName
 * Entity type: Simple
 2. Names come in many different forms, we're going to help our model understand what a name is by providing it some examples. We can do this with a phrase list.
 * Go to Phrase lists > Create new phrase list
@@ -53,6 +53,19 @@ You'll see we've got an entity here that we want to pick out, and that's the nam
 3. Go back to Intents > FindPatient
 * Click on 'John' and then move the cursor over to 'Smith' and click, so that the square braces include the entire name. Label it 'Name'.
 * Do the same with the other utterances. 
+
+## 5 - Add the 'DischargeDate' intent
+1. The final intent we wish to add is one that will trigger when we want to find out who is due to leave the hospital. Go to Intents > Create a new intent.
+* Intent name: DischargeDate
+2. Go to Entities > Manage prebuilt entities
+* Scroll down to the bottom of the list and select 'datetimeV2'. What this is, is a predefined entity which we can use straight away to detect words relating to date and time. You'll notice there's a lot of other prebuilt entities for example email addresses, phone numbers, urls and so on.
+3. Go back to the 'DischargeDate' intent and enter some utterances:
+* 'Who is being discharged today?'
+* 'Who is going home tomorrow?'
+* 'Which patients are going home next week?'
+* 'Who is due to go home on Friday?'
+* 'Which patients are due to be discharged?'
+
 
 ## 6 - Train the model
 1. Click the train button in the upper right!
