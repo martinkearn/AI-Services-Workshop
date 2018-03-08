@@ -16,6 +16,8 @@ You'll need a GitHub client to clone the repository containing the labs. We stro
 ## 3 - Clone the 'AI Services Workshop' GitHub repo
 All of the labs, samples and instructions are contained in a GitHub repository. You need to ['clone'](https://help.github.com/articles/cloning-a-repository/) this repository to get a local copy to work from.
 
+You'll need to create a GitHub accountin order to Clone, you can do that at https://github.com/join
+
 1. Go to https://github.com/martinkearn/AI-Services-Workshop
 1. Click 'Clone or download'
 1. Click 'Open in desktop'
@@ -28,9 +30,8 @@ We'll use Slack throughout the day for various things. You'll get the best exper
 
 1. Go to https://slack.com/downloads/windows
 1. Download and install the appropriate version for your machine (Windows, Mac or Linux)
-1. Press the + icon to 'Sign in t another workspace'
+1. Press the + icon to 'Sign in to another workspace'
 1. Join the 'AIServicesWorkshop' by entering `AIServicesWorkshop` in the 'sign into your workspace' screen (or visit http://aka.ms/AIWorkshopSlack)
-
 
 ## 5 - Install the TOR browser
 Sometimes we have problem with lots of client accessing the same website from the same location/IP address. 
