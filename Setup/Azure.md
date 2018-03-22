@@ -20,8 +20,7 @@ You'll need a Microsoft account to setup an Azure subscription. This can be an e
 ## 2 - Get an Azure subscription
 This section will give you a credit-card-free Azure trial with $100 of credit to use today and afterwards.
 
-1. Go to http://aka.ms/AzurePassManager
-1. Enter `AIEvent` as the event name
+1. Go to http://aiday.info/azurepass
 1. Click 'Claim your code'
 1. Make a note of the code that is shown, you'll only see this once
 1. Go to https://www.microsoftazurepass.com/
