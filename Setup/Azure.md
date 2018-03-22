@@ -25,4 +25,4 @@ This section will give you a credit-card-free Azure trial with $100 of credit to
 1. Make a note of the code that is shown, you'll only see this once
 1. Go to https://www.microsoftazurepass.com/
 1. Sign in with a 'Microsoft account' (i.e. Outlook.com, Hotmail.co.uk, Live.co.uk etc .....cannot be a school or organisation account)
-1. Enter the code obtained in the step 4 and click 'Claim promo code'
+1. Enter the code obtained earlier in this section and click 'Claim promo code'
