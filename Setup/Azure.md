@@ -10,7 +10,7 @@ If you don't have an existing subscription and are not willing to use your credi
 ## 1 - Get a Microsoft account
 You'll need a Microsoft account to setup an Azure subscription. This can be an existing Outlook, Live, Hotmail etc account, if you have an existing account you can skip this part.
 
-You must not use a School or Organisation account; it must be a personal Microsoft account.
+**You must not use a School or Organisation account; it must be a *personal* Microsoft account.**
 
 1. Go to https://signup.live.com
 1. You can use an existing email address if you like or click 'Create new email address' to create a new address with Outlook.com
@@ -18,13 +18,12 @@ You must not use a School or Organisation account; it must be a personal Microso
 1. Click 'next' and follow the process.
 
 ## 2 - Get an Azure subscription
-Please note that steps 1-5 can also be acheved via http://aka.ms/AzurePassManager
+This section will give you a credit-card-free Azure trial with $100 of credit to use today and afterwards.
 
-1. Open Slack and go to the 'AIServicesWorkshop' workspace
-1. Go to 'Azure Pass Bot' (under apps in the left navigation)
-1. As the bot for a pass using something like "can I have a pass"
-1. When prompted, enter the code the presenter gives you as the event name
-1. Make a note of the pass that the bot gives you
+1. Go to http://aka.ms/AzurePassManager
+1. Enter `AIEvent` as the event name
+1. Click 'Claim your code'
+1. Make a note of the code that is shown, you'll only see this once
 1. Go to https://www.microsoftazurepass.com/
 1. Sign in with a 'Microsoft account' (i.e. Outlook.com, Hotmail.co.uk, Live.co.uk etc .....cannot be a school or organisation account)
-1. Enter the promo code obtained in the previous section and click 'Claim promo code'
+1. Enter the code obtained in the step 4 and click 'Claim promo code'
