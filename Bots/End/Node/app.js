@@ -55,23 +55,52 @@ var intents = new builder.IntentDialog({ recognizers: [recognizer] })
 .matches('Cancel', (session) => {
     session.send('You reached Cancel intent, you said \'%s\'.', session.message.text);
 })
-.matches('Time', (session, args) => {
-    var entities = args.entities;
-    var dataEntity = builder.EntityRecognizer.findEntity(entities, 'builtin.datetimeV2.date');
+.matches('FreeBed', (session, args) => {
+     // Check to see if we have a Ward entity resolved from the utterance
+     var entities = args.entities;
+     var ward = builder.EntityRecognizer.findEntity(entities, 'Ward');    
+     if (ward) {
+        session.send('Searching for a free bed in the \'%s\' ward..', ward.entity);
+    }
+    else {
+        session.send('Searching for a free bed in all wards..');
+    }
+    
+    // Simulate some background lookup and display results
+    session.sendTyping();
+    setTimeout(function () {
+        var randomnumber=Math.floor((Math.random() * 10) + 1); 
+        session.send("%s free beds found", randomnumber);
+    }, 3000);
+})
+.matches('DischargeDate', (session, args) => {
+     // Check to see if we've been passed a time period
+     var entities = args.entities;
+     var dateEntity = builder.EntityRecognizer.findEntity(entities, 'builtin.datetimeV2.date');
+     var dateOptions = { year: 'numeric', month: 'long', day: '2-digit' };
 
-    if (dataEntity)
-    {
-        var futureDate = new Date(dataEntity.resolution.values.slice(-1)[0]['value'])
-        session.send('The date %s is %s',dataEntity.entity, futureDate.toLocaleDateString());
+    if (dateEntity) {
+        // Always looking for future dates - might get multiple values back if it's ambiguous
+        // https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-reference-prebuilt-entities#builtindatetimev2
+        var futureDate = new Date(dateEntity.resolution.values.slice(-1)[0]['value']);
+        session.send('Searching patients being discharged %s (%s)..', dateEntity.entity, futureDate.toLocaleDateString("en-GB", dateOptions));
     }
-    else
-    {
-        session.send('The current date and time is %s', new Date().toGMTString())
+    else {
+        session.send('Searching patients being discharged this week..');
     }
+    
+    // Simulate some background lookup and display results
+    session.sendTyping();
+    setTimeout(function () {
+        session.send(":( no patients leaving");
+    }, 3000);
 })
 
+/*
+.matches('<yourIntent>')... See details at http://docs.botframework.com/builder/node/guides/understanding-natural-language/
+*/
 .onDefault((session) => {
     session.send('Sorry, I did not understand \'%s\'.', session.message.text);
 });
 
-bot.dialog('/', intents);    
+bot.dialog('/', intents);
