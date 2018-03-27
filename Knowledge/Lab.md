@@ -31,11 +31,6 @@ In this section we'll add extra information to the knowledge base which is missi
 
 Note that you can also choose alternative answers and add additional phrasings to make the knowledge base broader.
 
-### 1.3 - Publish
-In this section, we'll publish the QnA Maker service so we can see the API end point and key.
-1. Click Publish
-1. Note that you have an endpoint and `Ocp-Apim-Subscription-Key` which can be used to make simple API calls
-
 ## 2 - Books Recommendations
 In this section you'll deploy the Cortana Intelligence Suite Recommendations Solution to your Azure subscription and train it to provide book recommendations.
 
@@ -78,12 +73,13 @@ In this section we'll configure a build. This is where the recommendations solut
     1. Enable Cold to Cold Recommendations: 'True'
 1. Click 'Train'.
 
-The training process can take a while. Your instructor will now show the rest of the lab on a pre-trained model, but steps are provided below for you to follow at a later date.
+The training process can take a while. Your instructor may now show the rest of the lab on a pre-trained model, but steps are provided below for you to follow at a later date.
 
 ### 2.4 - Test your Recommendations build
 In this section we'll test the build out to see what recommendations are being made for specified catalog items (books).
 
-1. Access the Recommendation UI. The link will be in the information you saved at the end of step 2.1. It will look something like https://booksqakksmxlyfm22ws.azurewebsites.net/ui/
+1. Access the Recommendation UI. The link will be in the information you saved at the end of step 2.1. It will look something like https://{Some unique reference}.azurewebsites.net/ui/
+    * If your project is taking too long on your own subscription, you are welcome to use the pre-trained model at https://booksqakksmxlyfm22ws.azurewebsites.net/ui/ using a key of `Yndsc3pnbDNmeGtqMg==`
 1. Check that the Status is 'Completed'
 1. Click 'Score' to test the model
 In 'Test Item Recommendations' enter `60234814` which is the ID of a book called 'The Lion the Witch and the Wardrobe'. Notice that 10 results are returned.
@@ -92,9 +88,10 @@ In 'Test Item Recommendations' enter `60234814` which is the ID of a book called
 ### 2.5 Look at the API reference
 In this section, we'll explore the API.
 
-1. Access your Swagger site. The link will be in the information you saved at the end of step 2.1. It will look something like https://booksqakksmxlyfm22ws.azurewebsites.net/swagger
+1. Access your Swagger site. The link will be in the information you saved at the end of step 2.1. It will look something like https://{Some unique reference}.azurewebsites.net/swagger
+    * If your project is taking too long on your own subscription, you are welcome to use the pre-trained model at https://booksqakksmxlyfm22ws.azurewebsites.net/ui/ using a key of `Yndsc3pnbDNmeGtqMg==`
 1. Enter the 'Admin Key' in the 'API Key' section and click 'Explore'
-1. Click 'List Operations' to see tehvarious API operations
+1. Click 'List Operations' to see the various API operations
 1. Click on `/api/models/default/recommend`
 1. Set `60234814` as the 'itemId' and click 'Try it out'
 1. Observe the JSON that gets returned
