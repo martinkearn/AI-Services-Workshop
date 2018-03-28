@@ -7,7 +7,7 @@ In this lab you'll be using LUIS to create a language model that can classify th
 
 1. Navigate to [LUIS](https://www.luis.ai/home), and sign in using the Azure account you created during Martin's [Setup](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Setup/Lab.md) session.
 2. Create a New App
-* Name: Fusion Birmingham
+* Name: AI Workshop
 * Culture: English
 * Description: Hospital application
 
@@ -40,9 +40,9 @@ You can see that the Ward entity has been automatically tagged because they are 
 * 'Where's John Smith?'
 You'll see we've got an entity here that we want to pick out, and that's the name of the patient, so let's make that now.
 
-## 5 - Add the 'Patient' entity
+## 5 - Add the 'PatientName' entity
 1. Go to Entities > Create new entity
-* Entity name: Patient
+* Entity name: PatientName
 * Entity type: Simple
 2. Names come in many different forms, we're going to help our model understand what a name is by providing it some examples. We can do this with a phrase list.
 * Go to Phrase lists > Create new phrase list
@@ -54,7 +54,78 @@ You'll see we've got an entity here that we want to pick out, and that's the nam
 * Click on 'John' and then move the cursor over to 'Smith' and click, so that the square braces include the entire name. Label it 'Name'.
 * Do the same with the other utterances. 
 
-## 6 - Train the model
+## 6 - Add the 'DischargeDate' intent
+1. The final intent we wish to add is one that will trigger when we want to find out who is due to leave the hospital. Go to Intents > Create a new intent.
+* Intent name: DischargeDate
+2. Go to Entities > Manage prebuilt entities
+* Scroll down to the bottom of the list and select 'datetimeV2'. What this is, is a predefined entity which we can use straight away to detect words relating to date and time. You'll notice there's a lot of other prebuilt entities for example email addresses, phone numbers, urls and so on.
+3. Go back to the 'DischargeDate' intent and enter some utterances:
+* 'Who is being discharged today?'
+* 'Who is going home tomorrow?'
+* 'Which patients are going home next week?'
+* 'Who is due to go home on Friday?'
+* 'Which patients are due to be discharged?'
+
+
+## 7 - Train the model
 1. Click the train button in the upper right!
 2. Click the test button in the upper right.
 3. Type a test utterance e.g. 'Where is Alice Richards?'
+
+## Publishing a model
+1. Go to 'Publish' in the top right
+2. Select 'Publish to production slot' (blue button)
+3. Once that's done click on the endpoint url which is at the bottom. You'll see a result which looks like this:
+```json
+{"query":null,"intents":[],"entities":[]}
+```
+4. At the end of the url append 'where is there a bed free on ward 1a?' and press enter. You'll see the JSON response:
+```json
+{
+  "query": "where is there a bed free on ward 1a?",
+  "topScoringIntent": {
+    "intent": "FreeBed",
+    "score": 1.0
+  },
+  "intents": [
+    {
+      "intent": "FreeBed",
+      "score": 1.0
+    },
+    {
+      "intent": "FindPatient",
+      "score": 0.00712564448
+    },
+    {
+      "intent": "DischargeDate",
+      "score": 0.00711164251
+    },
+    {
+      "intent": "None",
+      "score": 0.00588066457
+    }
+  ],
+  "entities": [
+    {
+      "entity": "1a",
+      "type": "WardNo",
+      "startIndex": 34,
+      "endIndex": 35,
+      "resolution": {
+        "values": [
+          "1a"
+        ]
+      }
+    }
+  ]
+}
+```
+* You can see the different intents and their corresponding confidence score - note that our 'FreeBed' intent is the highest scoring by a considerable margin. The detected entities are also listed, and we can see that ward '1a' has been detected, and where in the string.
+
+## Exporting and importing a model
+1. Go to 'My apps' in the top left
+2. Find the LUIS project, you'll see 'Culture', 'Created date' and 'Endpoint hits'. Finally there's three dots, click that and select 'Export App'.
+* You can use this to share your LUIS model with others. 
+3. To import a model, select 'Create new app'.
+4. Go to Settings in the top right.
+5. Click 'Import new version', select the .json model that was exported, and name it v2.

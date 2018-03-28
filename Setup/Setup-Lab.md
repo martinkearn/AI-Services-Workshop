@@ -16,6 +16,8 @@ You'll need a GitHub client to clone the repository containing the labs. We stro
 ## 3 - Clone the 'AI Services Workshop' GitHub repo
 All of the labs, samples and instructions are contained in a GitHub repository. You need to ['clone'](https://help.github.com/articles/cloning-a-repository/) this repository to get a local copy to work from.
 
+You'll need to create a GitHub accountin order to Clone, you can do that at https://github.com/join
+
 1. Go to https://github.com/martinkearn/AI-Services-Workshop
 1. Click 'Clone or download'
 1. Click 'Open in desktop'
@@ -28,23 +30,17 @@ We'll use Slack throughout the day for various things. You'll get the best exper
 
 1. Go to https://slack.com/downloads/windows
 1. Download and install the appropriate version for your machine (Windows, Mac or Linux)
-1. Press the + icon to 'Sign in t another workspace'
+1. Press the + icon to 'Sign in to another workspace'
 1. Join the 'AIServicesWorkshop' by entering `AIServicesWorkshop` in the 'sign into your workspace' screen (or visit http://aka.ms/AIWorkshopSlack)
 
-## 5 - Get an Azure subscription
-You'll need an Azure subscription to host various services that are created during the day. If you already have an Azure subscription, you can use that and skip this step (the costs for all the labs today is small).
+## 5 - Install the TOR browser
+Sometimes we have problem with lots of client accessing the same website from the same location/IP address. 
 
-If you don't already have Azure (or want your own subscription just for today), you can get a creditcard-free trial by following these steps.
+This is a known issue and use of the TOR browser gets around it by bouncing your communications around a distributed network of relays run by volunteers all around the world.
 
-We have limited numbers of trial codes and so you should only claim one if you need one. You can also sign-up for a trial using https://azure.microsoft.com/en-gb/free/, this gives you £150 credit but requires credit card details for verification purposes.
+This is an optional step.
 
-If you don't have an existing subscription and are not willing to use your credit card as a security verification, please go ahead.
-
-1. Open Slack and go to the 'AIServicesWorkshop' workspace
-1. Go to 'Azure Pass Bot' (under apps in the left navigation)
-1. As the bot for a pass using something like "can I have a pass"
-1. When prompted, enter the code the presenter gives you as the event name
-1. Make a note of the pass that the bot gives you
-1. Go to https://www.microsoftazurepass.com/
-1. Sign in with a 'Microsoft account' (i.e. Outlook.com, Hotmail.co.uk, Live.co.uk etc .....cannot be a school or organisation account)
-1. Enter the promo code obtained in the previous section and click 'Claim promo code'
+1. Go to https://www.torproject.org/
+1. Click 'Download Tor'
+1. Download and install the appropriate version for your device
+1. Use Tor for the remainder of the labs
