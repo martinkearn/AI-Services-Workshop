@@ -4,28 +4,31 @@ Demos, labs, samples and slides which support the Microsoft AI Services workshop
 ## Labs
 These are Markdown files with supporting files where required which guide you through the labs you'll be doing during the workshop.
 
-[Setup](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Setup/Lab.md)
+[Setup Lab](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Setup/Setup-Lab.md)
 
-[Computer Vision](https://github.com/martinkearn/AI-Services-Workshop/blob/master/ComputerVision/Lab.md)
+[Azure Setup Lab](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Setup/Azure-Lab.md)
 
-[Knowledge Services](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Knowledge/Lab.md)
+[Computer Vision Lab](https://github.com/martinkearn/AI-Services-Workshop/blob/master/ComputerVision/ComputerVision-Lab.md)
 
-[Language Services](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Language/Lab.md)
+[Knowledge Services Lab](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Knowledge/Knowledge-Lab.md)
 
-[Bots](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Bots/Lab.md)
+[Language Services Lab](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Language/Language-Lab.md)
 
-[Machine Learning](https://github.com/martinkearn/AI-Services-Workshop/blob/master/MachineLearning/Lab.md)
+[Bots Lab](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Bots/Bots-Lab.md)
+
+[Machine Learning Lab](https://github.com/martinkearn/AI-Services-Workshop/blob/master/MachineLearning/MachineLearning-Lab.md)
+
+## Demos
+You can find the demo scripts for any demos you'll have seen at the workshop below.
+
+[Sports Shop Recommendations Demo](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Knowledge/SportsShop-Demo.md)
+
+[Speech Demo](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Speech/Speech-Demo.md)
 
 ## Slides
-These are PDF exports of the slides you'll have seen during the workshop
+You can find PDF exports of the slides you'll have seen at the workshop in the `Slides` folder in this repository.
 
 ## Contacts
 You can contact these people about this content
 
-[Martin Kearn](https://twitter.com/MartinKearn)
-
-[Frances Tibble](https://twitter.com/frances_tibble)
-
-[Jamie Dalton](https://twitter.com/daltskin)
-
-[Mason Cusack](https://twitter.com/MasonCusack)
+[Martin Kearn](https://martink.me)
