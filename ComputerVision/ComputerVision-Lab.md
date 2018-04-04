@@ -6,24 +6,23 @@ In this lab you'll be using Custom Vision to create a machine learning model tha
 ## 1 - Create the machine learning model
 1. Navigate to [Custom Vision](https://www.customvision.ai/) (AIDay.info/CustomVision), and sign in using the Azure account you created during Martin's [Setup](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Setup/Lab.md) session.
 2. Create a New Project 
-* Name: Fusion Birmingham
+* Name: Makaton
 * Description: Classifying Makaton signs
 * Domains: General
 3. Add some training images (these are provided in the [Training Images](https://github.com/martinkearn/AI-Services-Workshop/tree/master/ComputerVision/TrainingImages) folder)
 * We're going to start by adding the `Rabbit` training images
 * Once the images have uploaded you will be asked to add some tags to this batch of images. We're going to add the tag `rabbit` here (make sure to press the `+` symbol to add the tag)
 * Select to `Upload` the 5 files
-* Once this is done it should tell us 2 of the images were duplicates
 4. Add some more training images
-* Now we're going to add the `Sleep` training images using the same method which you can find in the `Sleep` folder
+* Now we're going to add the `Sleep` training images using the same method. You can find these images in the `Sleep` folder.
 * Once the images have uploaded we can tag them as `sleep`
 * Select to `Upload` the 5 files
-5. Click the green `Train` model button
+5. Click the green `Train` model button in the top right
 
 ## 2 - Testing our model
 1. Select `Quick Test` and upload an image
 * Either find a willing volunteer to take your picture 
-* or navigate to the `TestImages` folder and select one of those
+* or navigate to the `TestImages` folder and select one of those provided
 
 ## 3 - Improving our model
 1. Navigate to the `Predictions` tab
