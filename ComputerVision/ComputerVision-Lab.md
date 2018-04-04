@@ -4,7 +4,7 @@ There is a wealth of information contained in images. Microsoft’s computer vis
 In this lab you'll be using Custom Vision to create a machine learning model that can classify whether a person is making the sign for "rabbit" or the sign for "sleep". We'll then test and improve our model using new images.
 
 ## 1 - Create the machine learning model
-1. Navigate to [Custom Vision](https://www.customvision.ai/), and sign in using the Azure account you created during Martin's [Setup](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Setup/Lab.md) session.
+1. Navigate to [Custom Vision](https://www.customvision.ai/) (AIDay.info/CustomVision), and sign in using the Azure account you created during Martin's [Setup](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Setup/Lab.md) session.
 2. Create a New Project 
 * Name: Fusion Birmingham
 * Description: Classifying Makaton signs
