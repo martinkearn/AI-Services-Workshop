@@ -9,7 +9,7 @@ Here you will be building a Hospital Bed Booking Bot - that helps hospital staff
 
 ## 1 - Create Azure Bot Service
 
-1. Navigate to the [Azure Portal](https://portal.azure.com)
+1. Navigate to the [Azure Portal](https://portal.azure.com) (AIDay.info/Azure)
 2. Create a new resource, select `AI + Cognitive Services` and `Web App Bot`
 3. Choose a unique Bot name and select a new Resource Group called `RG-BotLab`
 4. Set the Location to be `West Europe`
@@ -33,7 +33,7 @@ Here you will be building a Hospital Bed Booking Bot - that helps hospital staff
 ## 2 - Create Language understanding model
 A basic bot has now been provisioned for you which already has natural language capability - we just need to add the custom intents to it for our scenario.
 
-1. Navigate to the [Luis portal](https://eu.luis.ai)
+1. Navigate to the [Luis portal](https://eu.luis.ai) (AIDay.info/Luis)
 2. Open the new model that has been provisioned for you
 
 ### Adding utterances to an existing intent
