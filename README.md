@@ -23,7 +23,7 @@ You can find the demo scripts for any demos you'll have seen at the workshop bel
 
 [Sports Shop Recommendations Demo](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Knowledge/SportsShop-Demo.md)
 
-[Speech Demo](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Speech/Speech-Demo.md)
+[Language Speech Demo](https://github.com/martinkearn/AI-Services-Workshop/blob/master/LanguageSpeech/LanguageSpeech-Demo.md)
 
 ## Slides
 You can find PDF exports of the slides you'll have seen at the workshop in the `Slides` folder in this repository.
