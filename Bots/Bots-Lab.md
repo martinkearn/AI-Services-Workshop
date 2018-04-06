@@ -13,12 +13,10 @@ You will be building a Hospital Bed Booking Bot - that helps hospital staff find
 1. Set the Location to be `West Europe`
 1. Within Bot template select `Node.js`
 1. Select `Language understanding` template
-1. Change the LUIS App location to `West Europe`
+1. Change the LUIS App location to `West Europe` (this is an important step and if you can't find your Luis model later, you likely missed this step)
 1. Change the Application Insights Location to `West Europe`
 1. Complete the other required fields
-
-> Wait a few minutes for the provisioning to complete, then open the resource group
-
+1. Wait a few minutes for the provisioning to complete, then open the resource group
 1. Look at the resources that have been provisioned for you:
 
 > | Type | Value |

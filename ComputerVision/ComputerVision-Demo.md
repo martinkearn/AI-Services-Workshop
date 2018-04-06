@@ -2,8 +2,7 @@
 In this demo, we'll explore some example uses of the Computer Vision API.
 
 ## Explore the Computer Vision API on Azure
-Go to https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/
-* This is the homepage for the Computer Vision API
+Go to http://aiday.info/ComputerVision
 
 Scroll to `Analyse an image'
 * Click `Browse' to find an image, and click upload
@@ -25,7 +24,7 @@ Highlight the smart thumbnail
 * Can be used to generate images for retail sites
 
 ## Try out the Intelligent Kiosk
-Go to https://github.com/Microsoft/Cognitive-Samples-IntelligentKiosk
+Go to http://aiday.info/IntelligentKiosk
 
 Follow the instructions in the README to install the Intelligent Kiosk app
 
@@ -39,5 +38,3 @@ Test out the demos
 * Try out the Greeting Kiosk - this will recognise you
 * Try out the Face API explorer - see how accurate its estimate of your age is!
 * Look at the Social Booths, try some of the different filters, and add the 3D mesh on
-
-
