@@ -3,25 +3,23 @@ Bots are a new type of App. One which fundamentally changes we the way we intera
 
 In this lab you'll be creating your very own chatbot which is publically accessible and that can understand users using Microsoft Cognitive Services.
 
-# Scenario
+You will be building a Hospital Bed Booking Bot - that helps hospital staff find and allocate free beds to patients. They will also be to discover which patients are being discharged from the hospital.
 
-Here you will be building a Hospital Bed Booking Bot - that helps hospital staff find and allocate free beds to patients.  They will also be to discover which patients are being discharged from the hospital.
+## Part 1 - Create Azure Bot Service
 
-## 1 - Create Azure Bot Service
-
-1. Navigate to the [Azure Portal](https://portal.azure.com) (AIDay.info/Azure)
-2. Create a new resource, select `AI + Cognitive Services` and `Web App Bot`
-3. Choose a unique Bot name and select a new Resource Group called `RG-BotLab`
-4. Set the Location to be `West Europe`
-5. Within Bot template select `Node.js`
-6. Select `Language understanding` template
-7. Change the LUIS App location to `West Europe`
-8. Change the Application Insights Location to `West Europe`
-9. Complete the other required fields
+1. Navigate to the Azure Portal at http://aiday.info/AzurePortal
+1. Create a new resource, select `AI + Cognitive Services` and `Web App Bot`
+1. Choose a unique Bot name and select a new Resource Group called `RG-BotLab`
+1. Set the Location to be `West Europe`
+1. Within Bot template select `Node.js`
+1. Select `Language understanding` template
+1. Change the LUIS App location to `West Europe`
+1. Change the Application Insights Location to `West Europe`
+1. Complete the other required fields
 
 > Wait a few minutes for the provisioning to complete, then open the resource group
 
-10.  Look at the resources that have been provisioned for you:
+1. Look at the resources that have been provisioned for you:
 
 > | Type | Value |
 > | ----- | ----- |
@@ -30,42 +28,43 @@ Here you will be building a Hospital Bed Booking Bot - that helps hospital staff
 > | Application Insights | Telemetry & error data for the bot |
 > | Storage account | Bot state |
 
-## 2 - Create Language understanding model
+## Part 2 - Create Language understanding model
 A basic bot has now been provisioned for you which already has natural language capability - we just need to add the custom intents to it for our scenario.
 
-1. Navigate to the [Luis portal](https://eu.luis.ai) (AIDay.info/Luis)
-2. Open the new model that has been provisioned for you
+### 2.1 Open Luis Portal
+1. Navigate to the Luis portal at http://aiday.info/Luis
+1. Open the new model that has been provisioned for you
 
-### Adding utterances to an existing intent
-3. Open the `Greeting` intent and add as many new utterances for saying welcome you can think of that aren't already added by default eg.
+### 2.2 Adding utterances to an existing intent
+1. Open the `Greeting` intent and add as many new utterances for saying welcome you can think of that aren't already added by default eg.
     * Yo
     * Sup
     * Hey
 
-### Adding a custom intent
-4. Add a new custom intent, select `Create new Intent` named `FreeBed`
-5. Add as many ways of asking for a free hospital bed you can think of eg:
+### 2.3 Adding a custom intent
+1. Add a new custom intent, select `Create new Intent` named `FreeBed`
+1. Add as many ways of asking for a free hospital bed you can think of eg:
     * Where is there a free bed?
     * Where can I find a free bed?
     * Is there a bed free?
 
-### Add a custom entity
-6. Select Entities - `Create new entity`, with an Entity name of `Ward` and type of `List`
-7. Add the following values (notice the Recommend values displayed as you enter these):
+### 2.4 Add a custom entity
+1. Select Entities - `Create new entity`, with an Entity name of `Ward` and type of `List`
+1. Add the following values (notice the Recommend values displayed as you enter these):
     * 1a
     * 1b 
     * 1c
     * 2a
     * 2b
     * 2c
-8. Go back to Intents - `FreeBed` and enter the following utterances (notice how the `Ward` entity is automatically tagged as you do this)
+1. Go back to Intents - `FreeBed` and enter the following utterances (notice how the `Ward` entity is automatically tagged as you do this)
     * Is there a free bed on ward 1a?
     * Where can I find a free bed on ward 1b?
     * Is there a bed free on ward 2c?
 
-### Add additional custom entity with prebuilt entity (optional step)
-9. Select Entities - `Manage prebuilt entities`, select `datetimev2`
-10. Add another new intent named `DischargeDate`, add as many ways of asking for patient discharge information eg:
+### 2.5 Add additional custom entity with prebuilt entity (optional step)
+1. Select Entities - `Manage prebuilt entities`, select `datetimev2`
+1. Add another new intent named `DischargeDate`, add as many ways of asking for patient discharge information eg:
     * Who is being discharged today?
     * Who is going home tomorrow?
     * Which patients are going home next week?
@@ -73,9 +72,9 @@ A basic bot has now been provisioned for you which already has natural language 
     * Which patients are due to be discharged?
     * What is the date next Saturday?
 
-### Train and Publish the LUIS model
+### 2.6 Train and Publish the LUIS model
 1. Train the model
-2. Publish the model - Within the Publish tab, take a note of the resources and keys that have been automatically setup within the Europe Regions you selected when you created the Azure Resource Group.  Here you can see the LUIS API key and app guid within the endpoint url eg:
+1. Publish the model - Within the Publish tab, take a note of the resources and keys that have been automatically setup within the Europe Regions you selected when you created the Azure Resource Group.  Here you can see the LUIS API key and app guid within the endpoint url eg:
 https://westeurope.api.cognitive.microsoft.com/api/v2.0/apps/{yourappid}?subscription-key={yourapikey}&verbose=true&timezoneOffset=0&q= 
 
 > As part of the template you've used, the Bot has already been wired up to > the LUIS model, you can check this within the App Settings within the Azure portal for Web App Bot.  You'll notice the same keys from following:
@@ -89,11 +88,12 @@ https://westeurope.api.cognitive.microsoft.com/api/v2.0/apps/{yourappid}?subscri
 ## 3 - Adding business logic within the bot using Azure Portal - App Service Editor
 Now we need to handle the LUIS intents that will be resolved by our LUIS model in our bot.  This is the code that will get fired when any LUIS intent is detected.
 
+### 3.1 Open the browser-based editor
 1. Within Azure Portal, Web App Bot, select the Build tab and `Open online editor`
-2. Within the App Service Editor - WWWROOT folder select the `app.js` file
+1. Within the App Service Editor - WWWROOT folder select the `app.js` file
 
-### Adding business logic for custom intent
-3. Add the logic for the `FreeBed` intent where it states `.matches('<yourIntent>')`:
+### 3.2 Adding business logic for custom intent
+1. Add the logic for the `FreeBed` intent where it states `.matches('<yourIntent>')`:
 ```js
 .matches('FreeBed', (session, args) => {
      // Check to see if we have a Ward entity resolved from the utterance
@@ -115,8 +115,8 @@ Now we need to handle the LUIS intents that will be resolved by our LUIS model i
 })
 ```
 
-### Adding business logic for DischargeDate custom intent - (optional step)
-4. Add the logic for the `DischargeDate` intent where it states `.matches('<yourIntent>')`:
+### 3.3 Adding business logic for DischargeDate custom intent - (optional step)
+1. Add the logic for the `DischargeDate` intent where it states `.matches('<yourIntent>')`:
 ```js
 .matches('DischargeDate', (session, args) => {
      // Check to see if we've been passed a time period
@@ -142,9 +142,9 @@ Now we need to handle the LUIS intents that will be resolved by our LUIS model i
 })
 ```
 
-### Testing the business logic
+### 3.4 Testing the business logic
 1. Within the Azure portal, Web App Bot, select the Test in Web Chat tab to bring up the WebChat channel test harness.
-2. Type the following utterances to check that the correct intent is resolved
+1. Type the following utterances to check that the correct intent is resolved
     * Hey
     * Are there any free beds?
     * How many free beds are in 1c ward?
