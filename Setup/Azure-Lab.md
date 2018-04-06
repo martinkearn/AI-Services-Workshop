@@ -12,7 +12,7 @@ You'll need a Microsoft account to setup an Azure subscription. This can be an e
 
 **You must not use a School or Organisation account; it must be a *personal* Microsoft account.**
 
-1. Go to https://signup.live.com
+1. Go to http://aiday.info/MicrosoftAccount
 1. You can use an existing email address if you like or click 'Create new email address' to create a new address with Outlook.com
 1. Choose/enter an email address and password
 1. Click 'next' and follow the process.
@@ -23,6 +23,6 @@ This section will give you a credit-card-free Azure trial with $100 of credit to
 1. Go to http://aiday.info/azurepass
 1. Click 'Claim your code'
 1. Make a note of the code that is shown, you'll only see this once
-1. Go to https://www.microsoftazurepass.com/
+1. Go to http://aiday.info/AzurePassRedeem
 1. Sign in with a 'Microsoft account' (i.e. Outlook.com, Hotmail.co.uk, Live.co.uk etc .....cannot be a school or organisation account)
 1. Enter the code obtained earlier in this section and click 'Claim promo code'

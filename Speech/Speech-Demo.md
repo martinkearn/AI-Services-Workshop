@@ -2,7 +2,7 @@
 In this demo, we explore the various speech services.
 
 ## Bing Speech
-Use Bing Speech - Speech Recognition Azure portal (https://azure.microsoft.com/en-us/services/cognitive-services/speech/)
+Use Bing Speech - Speech Recognition Azure portal at http://aiday.info/Speech
 
 Set language to `English (GB)`
 
@@ -22,7 +22,7 @@ Launch Windows ‘Translator’ app
 
 Start a conversation
 
-Enrol as an English speaker
+Enroll as an English speaker
 
 Have Mason join as a Chinese speaker
 
@@ -34,9 +34,9 @@ Have this conversation
 * Chinese: Yes, I know. It is crazy isn’t it? We had better stay at home for a week
 
 ## Speaker Recognition
-Use the Speaker Recognition Azure Portal (https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/)
+Use the Speaker Recognition Azure Portal at http://aiday.info/SpeakerRecognition
 
-Enrol on the system using the "I am going to make him an offer he cannot refuse" sample
+Enroll on the system using the "I am going to make him an offer he cannot refuse" sample
 
 Verify my voice
 

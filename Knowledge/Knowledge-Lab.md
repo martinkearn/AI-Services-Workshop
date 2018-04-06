@@ -6,12 +6,12 @@ In this section you'll setup a simple Q&A Maker service base don the FAQs found 
 
 ### 1.1 - Create QnA Maker Service
 In this section we'll configure a new QnA Maker service using the Innocent drinks FAQ pages.
-1. Go to https://www.innocentdrinks.co.uk/us/contact-us/faqs#faq-content (or search "Innocent Drink FAQ") and have a look at the FAQs
-1. Go to https://qnamaker.ai
+1. Go to http://aiday.info/Innocent (or search "Innocent Drink FAQ") and have a look at the FAQs
+1. Go to http://aiday.info/QNAMaker
 1. Sign In
 1. Click 'Create new service'
     1. Name: InnocentDrinks
-    1. URL: https://www.innocentdrinks.co.uk/us/contact-us/faqs#faq-content 
+    1. URL: https://www.innocentdrinks.co.uk/us/contact-us/faqs#faq-content (copy from your browser address bar from step 1)
     1. Create
 1. Test
 1. Ask "how do you make your juices"
@@ -34,10 +34,12 @@ Note that you can also choose alternative answers and add additional phrasings t
 ## 2 - Books Recommendations
 In this section you'll deploy the Cortana Intelligence Suite Recommendations Solution to your Azure subscription and train it to provide book recommendations.
 
+This is a long lab and it is not expected that everyone will get to the end in the tine permitted. If you want to stop at any point and see the final, pre-built solution, please see http://aiday.info/BooksFinal using a key of `Yndsc3pnbDNmeGtqMg==`
+
 ### 2.1 - Deploy the Recommendations Solution
 Unlike Cognitive Services, Cortana Intelligence Suite Solution will deploy several components to your own Azure subscription. This gives you a greater degree of control over how these components are used and how the overall solution is stitched together. In this section, we'll deploy the Recommendations solution to your Azure subscription.
 
-1. Go to https://aka.ms/recotemplate
+1. Go to http://aiday.info/Recommendations
 1. Create a deployment
     1. Deployment name: books
     1. Subscription: (Use whatever subscription you are using)
@@ -49,11 +51,11 @@ Unlike Cognitive Services, Cortana Intelligence Suite Solution will deploy sever
 1. Choose 'North Europe' for Application Insights and click 'Next'
 1. At the 'Next Steps' page, make sure you take a copy of this information (print to PDF)
 
-Detailed deployment instructions can be also found here: https://github.com/Microsoft/Product-Recommendations/blob/master/doc/deployment-instructions.md
+Detailed deployment instructions can be also found on the Recommendations Solution GitHub repository here: http://aiday.info/RecommendationsGitHub
 
 ### 2.2 - Upload data files to storage
 In this section we'll upload catalog and usage files which are used to train the recommendations solution
-1. Go to http://portal.azure.com
+1. Go to http://aiday.info/AzurePortal
 1. Go to 'Storage accounts' and click on the account where the first name and resource group matches the name you gave the solution deployment in part 2.1
 1. Click on 'blobs'
 1. Click on 'models'
@@ -79,7 +81,7 @@ The training process can take a while. Your instructor may now show the rest of 
 In this section we'll test the build out to see what recommendations are being made for specified catalog items (books).
 
 1. Access the Recommendation UI. The link will be in the information you saved at the end of step 2.1. It will look something like https://{Some unique reference}.azurewebsites.net/ui/
-    * If your project is taking too long on your own subscription, you are welcome to use the pre-trained model at https://booksqakksmxlyfm22ws.azurewebsites.net/ui/ using a key of `Yndsc3pnbDNmeGtqMg==`
+    * If your project is taking too long on your own subscription, you are welcome to use the pre-trained model at http://aiday.info/BooksFinal using a key of `Yndsc3pnbDNmeGtqMg==`
 1. Check that the Status is 'Completed'
 1. Click 'Score' to test the model
 In 'Test Item Recommendations' enter `60234814` which is the ID of a book called 'The Lion the Witch and the Wardrobe'. Notice that 10 results are returned.
@@ -89,7 +91,7 @@ In 'Test Item Recommendations' enter `60234814` which is the ID of a book called
 In this section, we'll explore the API.
 
 1. Access your Swagger site. The link will be in the information you saved at the end of step 2.1. It will look something like https://{Some unique reference}.azurewebsites.net/swagger
-    * If your project is taking too long on your own subscription, you are welcome to use the pre-trained model at https://booksqakksmxlyfm22ws.azurewebsites.net/ui/ using a key of `Yndsc3pnbDNmeGtqMg==`
+    * If your project is taking too long on your own subscription, you are welcome to use the pre-trained model at http://aiday.info/BooksFinal using a key of `Yndsc3pnbDNmeGtqMg==`
 1. Enter the 'Admin Key' in the 'API Key' section and click 'Explore'
 1. Click 'List Operations' to see the various API operations
 1. Click on `/api/models/default/recommend`
