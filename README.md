@@ -12,8 +12,6 @@ These are Markdown files with supporting files where required which guide you th
 
 [Knowledge Services Lab](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Knowledge/Knowledge-Lab.md)
 
-[Language Services Lab](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Language/Language-Lab.md)
-
 [Bots Lab](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Bots/Bots-Lab.md)
 
 [Machine Learning Lab](https://github.com/martinkearn/AI-Services-Workshop/blob/master/MachineLearning/MachineLearning-Lab.md)
