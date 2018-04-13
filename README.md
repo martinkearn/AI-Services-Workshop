@@ -19,6 +19,8 @@ These are Markdown files with supporting files where required which guide you th
 ## Demos
 You can find the demo scripts for any demos you'll have seen at the workshop below.
 
+[Keynote Demos (HowHappy and Skyscanner)](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Keynote/Keynote-demo.md)
+
 [Sports Shop Recommendations Demo](https://github.com/martinkearn/AI-Services-Workshop/blob/master/Knowledge/SportsShop-Demo.md)
 
 [Language Speech Demo](https://github.com/martinkearn/AI-Services-Workshop/blob/master/LanguageSpeech/LanguageSpeech-Demo.md)
