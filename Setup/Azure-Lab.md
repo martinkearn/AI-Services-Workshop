@@ -8,7 +8,9 @@ We have limited numbers of trial codes and so you should only claim one if you n
 If you don't have an existing subscription and are not willing to use your credit card as a security verification, please go ahead.
 
 ## 1 - Get a Microsoft account
-You'll need a Microsoft account to setup an Azure subscription. This can be an existing Outlook, Live, Hotmail etc account, if you have an existing account you can skip this part proovide it doe snot match either of the criteria below:
+You'll need a Microsoft account to setup an Azure subscription. This can be an existing Outlook, Live, Hotmail etc account.
+
+Please make sure your Microsoft matches these criteria. If either of these are true, create a new account using the steps below:
 * **You must not use a School or Organisation account; it must be a *personal* Microsoft account.**
 * **You must not use an account that has already had an Azure trial associated with it in the past. If you do, you'll be asked to enter credit card details to start a 'pay as you go' subscription**
 
