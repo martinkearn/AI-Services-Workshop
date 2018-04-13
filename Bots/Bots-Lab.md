@@ -91,52 +91,60 @@ Now we need to handle the LUIS intents that will be resolved by our LUIS model i
 1. Within the App Service Editor - WWWROOT folder select the `app.js` file
 
 ### 3.2 Adding business logic for custom intent
-1. Add the logic for the `FreeBed` intent where it states `.matches('<yourIntent>')`:
+1. Add the logic for the `FreeBed` intent under the CancelDialog code:
 ```js
-.matches('FreeBed', (session, args) => {
-     // Check to see if we have a Ward entity resolved from the utterance
-     var entities = args.entities;
-     var ward = builder.EntityRecognizer.findEntity(entities, 'Ward');    
-     if (ward) {
-        session.send('Searching for a free bed in the \'%s\' ward', ward.entity);
+bot.dialog('FreeBedDialog',
+    (session, args) => {
+        // Check to see if we have a Ward entity resolved from the utterance
+        var entities = args.intent.entities
+        var ward = builder.EntityRecognizer.findEntity(entities, 'Ward');    
+        if (ward) {
+            session.send('Searching for a free bed in the \'%s\' ward', ward.entity);
+        }
+        else {
+            session.send('Searching for a free bed in all wards');
+        }
+        
+        // Simulate some background processing and display results
+        session.sendTyping();
+        setTimeout(function () {
+            var randomnumber = Math.floor((Math.random() * 10) + 1); 
+            session.send("%s free beds found", randomnumber);
+        }, 3000);
     }
-    else {
-        session.send('Searching for a free bed in all wards');
-    }
-    
-    // Simulate some background processing and display results
-    session.sendTyping();
-    setTimeout(function () {
-        var randomnumber = Math.floor((Math.random() * 10) + 1); 
-        session.send("%s free beds found", randomnumber);
-    }, 3000);
+).triggerAction({
+    matches: 'FreeBed'
 })
 ```
 
 ### 3.3 Adding business logic for DischargeDate custom intent - (optional step)
-1. Add the logic for the `DischargeDate` intent where it states `.matches('<yourIntent>')`:
+1. Add the logic for the `DischargeDate` intent under the code you added above:
 ```js
-.matches('DischargeDate', (session, args) => {
-     // Check to see if we've been passed a time period
-     var entities = args.entities;
-     var dateEntity = builder.EntityRecognizer.findEntity(entities, 'builtin.datetimeV2.date');
-     var dateOptions = { year: 'numeric', month: 'long', day: '2-digit' };
-
-    if (dateEntity) {
-        // Always looking for future dates - might get multiple values back if it's ambiguous
-        // https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-reference-prebuilt-entities#builtindatetimev2
-        var futureDate = new Date(dateEntity.resolution.values.slice(-1)[0]['value']);
-        session.send('Searching patients being discharged %s (%s)..', dateEntity.entity, futureDate.toLocaleDateString("en-GB", dateOptions));
+bot.dialog('DischargeDateDialog',
+    (session, args) => {
+        // Check to see if we have a Ward entity resolved from the utterance
+        var entities = args.intent.entities;
+        var dateEntity = builder.EntityRecognizer.findEntity(entities, 'builtin.datetimeV2.date');
+        var dateOptions = { year: 'numeric', month: 'long', day: '2-digit' };
+        
+        if (dateEntity) {
+            // Always looking for future dates - might get multiple values back if it's ambiguous
+            // https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-reference-prebuilt-entities#builtindatetimev2
+            var futureDate = new Date(dateEntity.resolution.values.slice(-1)[0]['value']);
+            session.send('Searching patients being discharged %s (%s)..', dateEntity.entity, futureDate.toLocaleDateString("en-GB", dateOptions));
+        }
+        else {
+            session.send('Searching patients being discharged this week..');
+        }
+        
+        // Simulate some background lookup and display results
+        session.sendTyping();
+        setTimeout(function () {
+            session.send(":( no patients leaving");
+        }, 3000);
     }
-    else {
-        session.send('Searching patients being discharged this week..');
-    }
-    
-    // Simulate some background lookup and display results
-    session.sendTyping();
-    setTimeout(function () {
-        session.send(":( no patients leaving");
-    }, 3000);
+).triggerAction({
+    matches: 'DischargeDate'
 })
 ```
 
@@ -146,3 +154,4 @@ Now we need to handle the LUIS intents that will be resolved by our LUIS model i
     * Hey
     * Are there any free beds?
     * How many free beds are in 1c ward?
+    * Which patients are being discharged next thursday?
