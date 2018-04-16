@@ -31,6 +31,7 @@ A basic bot has now been provisioned for you which already has natural language 
 
 ### 2.1 Open Luis Portal
 1. Navigate to the Luis portal at http://aiday.info/Luis
+1. Scroll to the bottom of the welcome page and click 'Create new app'
 1. Open the new model that has been provisioned for you
 
 ### 2.2 Adding utterances to an existing intent
