@@ -34,7 +34,7 @@ Note that you can also choose alternative answers and add additional phrasings t
 ## 2 - Books Recommendations
 In this section you'll deploy the Cortana Intelligence Suite Recommendations Solution to your Azure subscription and train it to provide book recommendations.
 
-This is a long lab and it is not expected that everyone will get to the end in the tine permitted. If you want to stop at any point and see the final, pre-built solution, please see http://aiday.info/BooksNew using a key of `NDJzdW1vcnZicGNkaQ==`
+This is a long lab and it is not expected that everyone will get to the end in the tine permitted. If you want to stop at any point and see the final, pre-built solution, please see http://aiday.info/Books using a key of `ZmlhbDdndHBxN2t4aQ==`
 
 ### 2.1 - Deploy the Recommendations Solution
 Unlike Cognitive Services, Cortana Intelligence Suite Solution will deploy several components to your own Azure subscription. This gives you a greater degree of control over how these components are used and how the overall solution is stitched together. In this section, we'll deploy the Recommendations solution to your Azure subscription.
@@ -77,11 +77,12 @@ In this section we'll configure a build. This is where the recommendations solut
 
 The training process can take a while. Your instructor may now show the rest of the lab on a pre-trained model, but steps are provided below for you to follow at a later date.
 
+If your project is taking too long on your own subscription, you are welcome to use the pre-trained model yourself at http://aiday.info/Books using a key of `ZmlhbDdndHBxN2t4aQ==`
+
 ### 2.4 - Test your Recommendations build
 In this section we'll test the build out to see what recommendations are being made for specified catalog items (books).
 
 1. Access the Recommendation UI. The link will be in the information you saved at the end of step 2.1. It will look something like https://{Some unique reference}.azurewebsites.net/ui/
-    * If your project is taking too long on your own subscription, you are welcome to use the pre-trained model at http://aiday.info/BooksNew using a key of `NDJzdW1vcnZicGNkaQ==`
 1. Check that the Status is 'Completed'
 1. Click 'Score' to test the model
 In 'Test Item Recommendations' enter `60234814` which is the ID of a book called 'The Lion the Witch and the Wardrobe'. Notice that 10 results are returned.
@@ -91,7 +92,6 @@ In 'Test Item Recommendations' enter `60234814` which is the ID of a book called
 In this section, we'll explore the API.
 
 1. Access your Swagger site. The link will be in the information you saved at the end of step 2.1. It will look something like https://{Some unique reference}.azurewebsites.net/swagger
-    * If your project is taking too long on your own subscription, you are welcome to use the pre-trained model at http://aiday.info/BooksNew using a key of `NDJzdW1vcnZicGNkaQ==`
 1. Enter the 'Admin Key' in the 'API Key' section and click 'Explore'
 1. Click 'List Operations' to see the various API operations
 1. Click on `/api/models/default/recommend`
