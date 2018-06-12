@@ -1,7 +1,5 @@
 # Bots
-Bots are a new type of App. One which fundamentally changes we the way we interact with our devices. Bots will lead to a world where we are using natural language to interact with device and services. Microsoft are investing heavily in bots with the Microsoft Bot Framework and Azure Bot Service. In this talk we'll look at what a bot is, design patterns for bots and the Microsoft Bot Framework which lets you write a single bot that is published to multiple social channels such as Skype, Facebook and Slack.
-
-In this lab you'll be creating your very own chatbot which is publically accessible and that can understand users using Microsoft Cognitive Services.
+In this lab you'll be creating your very own chatbot which is publically accessible and that can understand users using Microsoft Cognitive Services such as LUIS.
 
 You will be building a Hospital Bed Booking Bot - that helps hospital staff find and allocate free beds to patients. They will also be to discover which patients are being discharged from the hospital.
 
@@ -11,11 +9,11 @@ You will be building a Hospital Bed Booking Bot - that helps hospital staff find
 1. Create a new resource, select `AI + Cognitive Services` and `Web App Bot`
 1. Choose a unique Bot name and select a new Resource Group called `RG-BotLab`
 1. Set the Location to be `West Europe`
-1. Within Bot template select `Node.js`
-1. Select `Language understanding` template
+1. Set the pricing tier to `F0`
+1. Within Bot template select `SDK V3`, `Node.js` and the `Language Understanding` template
 1. Change the LUIS App location to `West Europe` (this is an important step and if you can't find your Luis model later, you likely missed this step)
-1. Change the Application Insights Location to `West Europe`
-1. Complete the other required fields
+1. Disable the `Application Insights` option
+1. Complete the other required fields (leave as default unless specified) and click `Create`
 1. Wait a few minutes for the provisioning to complete, then open the resource group
 1. Look at the resources that have been provisioned for you:
 
@@ -23,32 +21,31 @@ You will be building a Hospital Bed Booking Bot - that helps hospital staff find
 > | ----- | ----- |
 > | Web App Bot | Azure Bot Service registration |
 > | App Service | API Endpoint the Azure Bot Service sends messages to/from |
-> | Application Insights | Telemetry & error data for the bot |
-> | Storage account | Bot state |
+> | Storage account | Bot state storage |
 
-## Part 2 - Create Language understanding model
-A basic bot has now been provisioned for you which already has natural language capability - we just need to add the custom intents to it for our scenario.
+## Part 2 - Create Language Understanding model
+A basic bot has now been provisioned for you which already has natural language capability - we just need to update the model for our scenario.
 
 ### 2.1 Open Luis Portal
-1. Navigate to the Luis portal at http://aiday.info/Luis
-1. Scroll to the bottom of the welcome page and click 'Create new app'
-1. Open the new model that has been provisioned for you
+1. Navigate to the Luis portal at http://aiday.info/Luis (please note this is the `EU.Luis.ai` portal, not the default `Luis.ai` one)
+1. Scroll to the bottom of the welcome page and click `Create Luis app`
+1. Open the new model that has been provisioned for you. It will be named afte rthe bot with some random digits on the end.
 
 ### 2.2 Adding utterances to an existing intent
-1. Open the `Greeting` intent and add as many new utterances for saying welcome you can think of that aren't already added by default eg.
+1. Open the `Greeting` intent and add as many new utterances for saying welcome you can think of that aren't already added by default, for exmaple.
     * Yo
     * Sup
     * Hey
 
 ### 2.3 Adding a custom intent
-1. Add a new custom intent, select `Create new Intent` named `FreeBed`
-1. Add as many ways of asking for a free hospital bed you can think of eg:
+1. Add a new custom intent. Under Intents, click `Create new intent` and name it `FreeBed`
+1. Add as many ways of asking for a free hospital bed you can think of (at least 5). Here are some exmaple to get you started:
     * Where is there a free bed?
     * Where can I find a free bed?
     * Is there a bed free?
 
 ### 2.4 Add a custom entity
-1. Select Entities - `Create new entity`, with an Entity name of `Ward` and type of `List`
+1. Under Entities, click `Create new entity`, with an Entity name of `Ward` and type of `List`
 1. Add the following values (notice the Recommend values displayed as you enter these):
     * 1a
     * 1b 
@@ -56,14 +53,14 @@ A basic bot has now been provisioned for you which already has natural language 
     * 2a
     * 2b
     * 2c
-1. Go back to Intents - `FreeBed` and enter the following utterances (notice how the `Ward` entity is automatically tagged as you do this)
+1. Go back to Intents > `FreeBed` and enter the following utterances (notice how the `Ward` entity is automatically tagged as you do this)
     * Is there a free bed on ward 1a?
     * Where can I find a free bed on ward 1b?
     * Is there a bed free on ward 2c?
 
 ### 2.5 Add additional custom entity with prebuilt entity (optional step)
-1. Select Entities - `Manage prebuilt entities`, select `datetimev2`
-1. Add another new intent named `DischargeDate`, add as many ways of asking for patient discharge information eg:
+1. Under Entities, click `Manage prebuilt entities`, select `datetimev2`
+1. Add another new intent named `DischargeDate`, add as many ways of asking for patient discharge information (at least 5). Here are some exmaples:
     * Who is being discharged today?
     * Who is going home tomorrow?
     * Which patients are going home next week?
@@ -88,11 +85,11 @@ https://westeurope.api.cognitive.microsoft.com/api/v2.0/apps/{yourappid}?subscri
 Now we need to handle the LUIS intents that will be resolved by our LUIS model in our bot.  This is the code that will get fired when any LUIS intent is detected.
 
 ### 3.1 Open the browser-based editor
-1. Within Azure Portal, Web App Bot, select the Build tab and `Open online editor`
-1. Within the App Service Editor - WWWROOT folder select the `app.js` file
+1. Within Azure Portal, Web App Bot, select `Build`, then `Open online editor`
+1. Within the App Service Editor > WWWROOT folder select the `app.js` file
 
 ### 3.2 Adding business logic for custom intent
-1. Add the logic for the `FreeBed` intent under the CancelDialog code:
+1. Add the following logic for the `FreeBed` intent beneath the `CancelDialog` code (changes are saved automatgically via the web-based IDE):
 ```js
 bot.dialog('FreeBedDialog',
     (session, args) => {
@@ -118,8 +115,8 @@ bot.dialog('FreeBedDialog',
 })
 ```
 
-### 3.3 Adding business logic for DischargeDate custom intent - (optional step)
-1. Add the logic for the `DischargeDate` intent under the code you added above:
+### 3.3 Adding business logic for DischargeDate custom intent
+1. Add the following logic for the `DischargeDate` intent under the code you added above:
 ```js
 bot.dialog('DischargeDateDialog',
     (session, args) => {
@@ -150,9 +147,9 @@ bot.dialog('DischargeDateDialog',
 ```
 
 ### 3.4 Testing the business logic
-1. Within the Azure portal, Web App Bot, select the Test in Web Chat tab to bring up the WebChat channel test harness.
+1. Within the Azure portal > Web App Bot, select the `Test in Web Chat` tab to bring up the WebChat channel test harness.
 1. Type the following utterances to check that the correct intent is resolved
     * Hey
     * Are there any free beds?
     * How many free beds are in 1c ward?
-    * Which patients are being discharged next thursday?
+    * Which patients are being discharged next Thursday?
