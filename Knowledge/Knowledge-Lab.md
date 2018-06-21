@@ -10,9 +10,13 @@ In this section we'll configure a new QnA Maker service using the Innocent drink
 2. Go to http://aiday.info/QNAMaker
 3. Sign In
 4. Click 'Create new service'
+    
     i. Name: InnocentDrinks
+
     ii. URL: https://www.innocentdrinks.co.uk/us/nutrition/nutrition-faqs (or copy from your browser address bar from step 1)
+    
     iii. Create
+
 5. Test
 6. Ask a question from or similar to one of those in the original FAQ.
 
@@ -39,9 +43,13 @@ Unlike Cognitive Services, Cortana Intelligence Suite Solution will deploy sever
 
 1. Go to http://aiday.info/Recommendations
 2. Create a deployment
+    
     i. Deployment name: books
+    
     ii. Subscription: (Use whatever subscription you are using)
+    
     iii. Location UK South (or wherever your nearest data center is)
+
 3. Click 'Create'
 4. Click 'Next'
 5. Choose 'B3' for the App Service Plan and click 'Next'. Note this is a relatively high tier because it will speed up training time later in the lab.
@@ -66,11 +74,17 @@ In this section we'll configure a build. This is where the recommendations solut
 1. Click on the link for 'Recommendations UI' from the 'next steps' page in the previous section
 2. Enter the 'Admin API key' from the previous step and click 'Login'
 3. Click 'Train new model' and enter the following details
+    
     i. Blob Container Name: 'models'
+    
     ii. Usage Folder/File Relative Path: 'books_usage_large_WithTimestamps.txt'
+    
     iii. Catalog File Relative Path: 'books_catalog_large.txt'
+    
     iv. Enable Cold Item Placement: 'True'
+    
     v. Enable Cold to Cold Recommendations: 'True'
+
 4. Click 'Train'.
 
 The training process can take a while. Your instructor may now show the rest of the lab on a pre-trained model, but steps are provided below for you to follow at a later date.
